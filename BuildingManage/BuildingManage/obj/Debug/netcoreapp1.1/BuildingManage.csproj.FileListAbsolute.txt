@@ -1,0 +1,9 @@
+c:\users\khuong\documents\visual studio 2017\Projects\BuildingManage\BuildingManage\bin\Debug\netcoreapp1.1\BuildingManage.deps.json
+c:\users\khuong\documents\visual studio 2017\Projects\BuildingManage\BuildingManage\bin\Debug\netcoreapp1.1\BuildingManage.runtimeconfig.json
+c:\users\khuong\documents\visual studio 2017\Projects\BuildingManage\BuildingManage\bin\Debug\netcoreapp1.1\BuildingManage.runtimeconfig.dev.json
+c:\users\khuong\documents\visual studio 2017\Projects\BuildingManage\BuildingManage\bin\Debug\netcoreapp1.1\BuildingManage.dll
+c:\users\khuong\documents\visual studio 2017\Projects\BuildingManage\BuildingManage\bin\Debug\netcoreapp1.1\BuildingManage.pdb
+c:\users\khuong\documents\visual studio 2017\Projects\BuildingManage\BuildingManage\obj\Debug\netcoreapp1.1\BuildingManage.csprojResolveAssemblyReference.cache
+c:\users\khuong\documents\visual studio 2017\Projects\BuildingManage\BuildingManage\obj\Debug\netcoreapp1.1\BuildingManage.AssemblyInfo.cs
+c:\users\khuong\documents\visual studio 2017\Projects\BuildingManage\BuildingManage\obj\Debug\netcoreapp1.1\BuildingManage.dll
+c:\users\khuong\documents\visual studio 2017\Projects\BuildingManage\BuildingManage\obj\Debug\netcoreapp1.1\BuildingManage.pdb
