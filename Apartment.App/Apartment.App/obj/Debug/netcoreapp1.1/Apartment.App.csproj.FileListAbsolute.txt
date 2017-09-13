@@ -1,0 +1,9 @@
+D:\DucTri\Work\study_Net_core (mvc)\Apartment.App\Apartment.App\bin\Debug\netcoreapp1.1\Apartment.App.deps.json
+D:\DucTri\Work\study_Net_core (mvc)\Apartment.App\Apartment.App\bin\Debug\netcoreapp1.1\Apartment.App.runtimeconfig.json
+D:\DucTri\Work\study_Net_core (mvc)\Apartment.App\Apartment.App\bin\Debug\netcoreapp1.1\Apartment.App.runtimeconfig.dev.json
+D:\DucTri\Work\study_Net_core (mvc)\Apartment.App\Apartment.App\bin\Debug\netcoreapp1.1\Apartment.App.dll
+D:\DucTri\Work\study_Net_core (mvc)\Apartment.App\Apartment.App\obj\Debug\netcoreapp1.1\Apartment.App.csprojResolveAssemblyReference.cache
+D:\DucTri\Work\study_Net_core (mvc)\Apartment.App\Apartment.App\obj\Debug\netcoreapp1.1\Apartment.App.AssemblyInfo.cs
+D:\DucTri\Work\study_Net_core (mvc)\Apartment.App\Apartment.App\bin\Debug\netcoreapp1.1\Apartment.App.pdb
+D:\DucTri\Work\study_Net_core (mvc)\Apartment.App\Apartment.App\obj\Debug\netcoreapp1.1\Apartment.App.dll
+D:\DucTri\Work\study_Net_core (mvc)\Apartment.App\Apartment.App\obj\Debug\netcoreapp1.1\Apartment.App.pdb
