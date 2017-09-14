@@ -1,0 +1,54 @@
+﻿@model OmegaProject.Models.Status
+
+@{
+    ViewData["Title"] = "Trạng thái";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chỉnh sửa</h2>
+
+<form asp-action="Edit">
+    <div class="form-horizontal">
+        <h4>Trạng thái</h4>
+        <a asp-action="Index">Trở lại danh sách</a>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="StatusId" />
+        <div class="form-group">
+            <label class="col-md-2 control-label">Tên trạng thái</label>
+            <div class="col-md-10">
+                <input asp-for="StatusName" class="form-control" />
+                <span asp-validation-for="StatusName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Ghi chú</label>
+            <div class="col-md-10">
+                <input asp-for="StatusNotes" class="form-control" />
+                <span asp-validation-for="StatusNotes" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <div class="checkbox">
+                    <input asp-for="StatusDisabled" />
+                    <label>Không hiển thị</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Đối tượng</label>
+            <div class="col-md-10">
+                <input asp-for="TableName" class="form-control" />
+                <span asp-validation-for="TableName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+

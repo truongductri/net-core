@@ -1,0 +1,132 @@
+﻿@{
+    ViewData["Title"] = "Tin tức";
+    Layout = "~/Views/Shared/_LayoutBootClean.cshtml";
+}
+
+<!-- Sub intro -->
+<section id="subintro">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <h4>@ViewData["Title"]</h4>
+                <h6>Cập nhật thông tin, thủ thuật và các tính năng mới</h6>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- End intro -->
+<!-- begin main contain -->
+<section id="maincontain" class="home-main">
+    <div class="container main-content">
+        <div class="row blog">
+            <div class="span9 primary-column pull-right">
+                <div id="easyPaginate">
+                    @foreach (Post item in ViewBag.Posts)
+                    {
+                        <article class="entry-item border-bottom-article margin-20">
+                            <div class="entry-heading">
+                                <a asp-action="Details" asp-route-id="@item.PostId"><img style="border-radius:4px;" alt="" src="@Url.Content("~/img/upload/" +(item.Photo == null ? "~/img/upload/940x400.gif" : (item.Photo.PhotoLarge01 == null ? "~/img/upload/940x400.gif" : item.Photo.PhotoLarge01)))" /></a>
+                                <h4><a asp-action="Details" asp-route-id="@item.PostId">@item.PostTitle</a></h4>
+                            </div>
+                            <div class="entry-content">
+                                <p>@item.PostDescription</p>
+                            </div>
+                            <div class="entry-meta">
+                                <ul class="meta-post">
+                                    <li><i class="icon-calendar"></i>@item.PostDateCreate.Value.ToString("dd/MM/yyyy")</li>
+                                    <li><i class="icon-user"></i>@item.PostUserCreateNavigation.UserName</li>
+                                    <li><i class="icon-folder-open"></i>@item.Category.CateName</li>
+                                    <li><i class="icon-tag"></i>@item.PostLabel</li>
+                                </ul>
+                                <a class="btn btn-flat btn-theme" asp-action="Details" asp-route-id="@item.PostId">đọc thêm</a>
+                            </div>
+                        </article>
+                    }
+                </div>
+                <!-- ./pagination -->
+
+            </div>
+
+            <div class="span3 slidebar sidebar-left pull-left">
+                <div class="widget categories">
+                    <h5 class="title">Danh mục</h5>
+                    <ul class="categories-item">
+                        @foreach (Category item in ViewBag.Categories)
+                        {
+                            if (ViewContext.RouteData.Values["id"].ToString() == item.CateId.ToString())
+                            {
+                                <li><a asp-action="Categories" asp-route-id="@item.CateId"><u>@item.CateName</u></a></li>
+                            }
+                            else
+                            {
+                                <li><a asp-action="Categories" asp-route-id="@item.CateId">@item.CateName</a></li>
+                            }
+
+                        }
+                    </ul>
+                </div>
+                <div class="widget last-post">
+                    <h5 class="title">Bài viết ngẫu nhiên</h5>
+                    <ul>
+                        @foreach (Post item in ViewBag.RandomPosts)
+                        {
+                            <li>
+                                <a asp-controller="Posts" asp-action="Details" asp-route-id="@item.PostId">
+                                    <img style="border-radius:4px;" alt="" src="@Url.Content("~/img/upload/" +(item.Photo == null ? "~/img/upload/67x56.gif" : (item.Photo.PhotoThumbNail == null ? "~/img/upload/67x56.gif" : item.Photo.PhotoThumbNail)))" align="left" />
+                                    <p>@item.PostTitle</p>
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+                @*<div class="widget tags-color">
+                    <h5 class="title">Tags</h5>
+                    <ul>
+                        @{
+                            List<string> allrow = new List<string>();
+                            foreach (string item in ViewBag.Tags)
+                            {
+                                string[] row = item.Split(';');
+                                for (int i = 0; i < row.Count(); i++)
+                                {
+                                    if (allrow.Count == 0)
+                                    {
+                                        allrow.Add(row[i]);
+                                    }
+                                    else
+                                    {
+                                        if (!allrow.Contains(row[i]))
+                                        {
+                                            allrow.Add(row[i]);
+                                        }
+                                    }
+                                }
+                            }
+                            foreach (string tag in allrow)
+                            {
+                                <li><a asp-action="Tags" asp-route-id="@tag">@tag</a></li>
+                            }
+                        }
+                    </ul>
+                </div>*@
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- end main contain -->
+@section Scripts{
+    <script src="~/js/jquery.easyPaginate.js"></script>
+    <script type="text/javascript">
+        $('#easyPaginate').easyPaginate({
+            paginateElement: 'article',
+            elementsPerPage: 4,
+            effect: 'default'
+        });
+        $("#page li a").click(function () {
+            $(this).parent().addClass('active').siblings().removeClass('active');
+
+        });
+    </script>
+}

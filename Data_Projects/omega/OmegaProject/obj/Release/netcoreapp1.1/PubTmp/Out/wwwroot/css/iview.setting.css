@@ -1,0 +1,154 @@
+/* iview slider */
+.iview-slider {
+	display: block;
+	margin: 0px auto;
+	-webkit-backface-visibility: hidden;
+	margin: 0;
+	background:#F3F3F3 url(../img/menu-bg.png) no-repeat center top;    
+}
+
+#iview {
+	display: block;
+	max-width: 1700px;
+	min-width: 300px;
+	position: relative;
+	overflow: hidden;
+}
+
+#iview .iviewSlider {
+	display: block;
+	width:1920px;
+	height: 525px;
+	overflow: hidden;
+	border-radius: 0;
+}
+
+
+
+#iview div.iview-directionNav {
+	position: absolute;
+	top: 47%;
+	left: 0px;
+	z-index: 9;
+	width: 100%;
+}
+
+#iview div.iview-directionNav a {
+	display: block;
+	cursor: pointer;
+	position: absolute;
+	width: 27px;
+	height: 27px;
+	background-image: url(../img/iview_bg_direction_nav.png);
+	text-indent: -9999px;
+	-webkit-transition: left 0.3s ease-in-out;
+	-webkit-transition-property: left,right;
+	-moz-transition: left 0.3s ease-in-out;
+	-moz-transition-property: left,right;
+	-o-transition: left 0.3s ease-in-out;
+	-o-transition-property: left,right;
+	-ms-transition: left 0.3s ease-in-out;
+	-ms-transition-property: left,right;
+	transition: left 0.3s ease-in-out;
+	transition-property: left,right;
+}
+
+#iview div.iview-directionNav a.iview-nextNav {
+	right: -27px;
+	background-position: 27px 0px;
+}
+
+#iview div.iview-directionNav a.iview-prevNav {
+	left: -27px;
+	background-position: 0px 0px
+}
+
+#iview.iview-hover div.iview-directionNav a.iview-nextNav {
+	right: 20px;
+}
+
+#iview.iview-hover div.iview-directionNav a.iview-prevNav {
+	left: 20px;
+}
+
+.iview-caption {
+	color: #fff;
+	font-size:16px;
+}
+
+.iview-caption h2,.iview-caption h3,.iview-caption h4, .iview-caption h5 {
+	color:#fefefe;
+	text-shadow:none;
+	margin-bottom:0;
+	padding: 10px 15px;
+	text-shadow: #000 1px 1px 0px;
+	border-radius: 2px;
+	border-color:none;
+}
+.iview-caption h2{
+	background:#585858;
+}
+
+.iview-caption h3,.iview-caption h4, .iview-caption h5 {
+	background:#20B2AA;
+	color: #fff;
+}
+
+
+.iview-caption.image {	
+	background:none;
+	border-radius: 0;
+	border:0;
+	padding:0;
+}
+
+.iview-caption.image img{
+	max-width:100%;
+	height:auto;
+}
+
+.iview-caption.video {	
+	background:none;
+	border-radius: 0;
+	border:0;
+	padding:0;
+}
+
+
+.iview-caption.video iframe {
+	width:500px;
+	height:325px;
+}
+
+
+.iview-caption.caption-dark {
+	text-shadow: none;
+}
+
+.iview-caption.caption-white {
+	background: #fff;
+	color: #222;
+	text-shadow: none;
+}
+
+.iview-caption.caption-theme {
+	color: #fff;
+	text-shadow: none;
+}
+
+
+#iview-preloader {
+	border: #666 1px solid;
+	width: 150px
+}
+
+#iview-preloader div {
+	background: #666;
+}
+#iview-timer {
+	border-radius: 10px;
+}
+
+#iview-timer div {
+	border-radius: 10px;
+}

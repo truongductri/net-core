@@ -1,0 +1,43 @@
+﻿@model OmegaProject.Models.Duty
+
+@{
+    ViewData["Title"] = "Chức vụ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chi tiết</h2>
+
+<div>
+    <h4>Chức vụ</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Mã chức vụ
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DutyNo)
+        </dd>
+        <dt>
+            Tên chức vụ
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DutyName)
+        </dd>
+        <dt>
+            Ghi chú
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DutyNotes)
+        </dd>
+        <dt>
+            Không hiển thị
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DutyDisabled)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.DutyId">Chỉnh sửa</a> |
+    <a asp-action="Index">Trở lại danh sách</a>
+</div>

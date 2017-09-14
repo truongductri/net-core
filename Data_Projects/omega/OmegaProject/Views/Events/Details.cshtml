@@ -1,0 +1,61 @@
+﻿@model OmegaProject.Models.Event
+
+@{
+    ViewData["Title"] = "Sự kiện";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chi tiết</h2>
+
+<div>
+    <h4>Sự kiện</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên sự kiện
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EventName)
+        </dd>
+        <dt>
+            Thông tin 1
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EventInfo1)
+        </dd>
+        <dt>
+            Thông tin 2
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EventInfo2)
+        </dd>
+        <dt>
+            Thông tin 3
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EventInfo3)
+        </dd>
+        <dt>
+            Thông tin 4
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EventInfo4)
+        </dd>
+        <dt>
+            Thông tin 5
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EventInfo5)
+        </dd>
+        <dt>
+            Tên hình ảnh
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Photo.PhotoName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.EventId">Chỉnh sửa</a> |
+    <a asp-action="Index">Trở lại danh sách</a>
+</div>

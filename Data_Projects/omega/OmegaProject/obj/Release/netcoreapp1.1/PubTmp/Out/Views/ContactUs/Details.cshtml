@@ -1,0 +1,49 @@
+﻿@model OmegaProject.Models.ContactUs
+
+@{
+    ViewData["Title"] = "Liên hệ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chi tiết</h2>
+
+<div>
+    <h4>Liên hệ</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tiêu đề
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ConTitle)
+        </dd>
+        <dt>
+            Người liên hệ
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ConName)
+        </dd>
+        <dt>
+            Email
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ConEmail)
+        </dd>
+        <dt>
+            Số điện thoại
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ConPhone)
+        </dd>
+        <dt>
+            Nội dung
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ConContent)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ConId">Chỉnh sửa</a> |
+    <a asp-action="Index">Trở lại danh sách</a>
+</div>

@@ -1,0 +1,78 @@
+﻿@{
+    ViewData["Title"] = "Khách hàng";
+    Layout = "~/Views/Shared/_LayoutBootClean.cshtml";
+}
+
+<!-- Sub intro -->
+<section id="subintro">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <h4>@ViewData["Title"]</h4>
+                <h6>Thông tin chi tiết</h6>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End intro -->
+<!-- begin main contain -->
+<section id="maincontain" class="home-main">
+    <div class="container main-content">
+        <div class="row">
+            <div class="span12">
+                <article>
+                    <div class="row">
+                        <div class="span8">
+                            <div class="heading portfolio-item">
+                                <h3>@ViewBag.Customer.CusName</h3>
+                            </div>
+                            <!-- start flexslider -->
+                            <div class="flexslider">
+                                <img style="border-radius:4px;" src="@Url.Content("~/img/upload/" +(ViewBag.Customer.Photo == null ? "973x500.gif" : (ViewBag.Customer.Photo.PhotoLarge02 == null ? "973x500.gif" : ViewBag.Customer.Photo.PhotoLarge02)))" alt="">
+                            </div>
+                            <!-- end flexslider -->
+                            <br />
+                            <p>@ViewBag.Customer.CusNotes</p>
+                        </div>
+                        <div class="span4">
+                            <div class="widget project-widget">
+                                <h4 class="title">Thông tin chi tiết</h4>
+                                <ul>
+                                    <li><label>@ViewBag.Customer.CusName</label></li>
+                                    <li><label>Ngành hàng :</label> @ViewBag.Customer.Bra.BraName</li>
+                                    <li><label>Địa chỉ :</label> @ViewBag.Customer.CusAddress</li>
+                                    <li><label>Website :</label> <a href="@ViewBag.Customer.CusWeb">@ViewBag.Customer.CusWeb</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <!-- end article full post -->
+            </div>
+        </div>
+        <div class="row recent-post">
+            <div class="span12">
+                <h4 class="under-line">Khách hàng liên quan</h4>
+                <div class="thumbnails">
+                    @foreach (Customer item in ViewBag.Customers)
+                    {
+                        <div class="span3">
+                            <div class="thumbnail-style">
+                                <a class="fancyme zoomer" title="@item.CusName" href="@Url.Content("~/img/upload/" +(item.Photo == null ? "~/img/upload/973x500.gif" : (item.Photo.PhotoLarge02 == null ? "~/img/upload/973x500.gif" : item.Photo.PhotoLarge02)))">
+                                    <div class="overlay-zoom">
+                                        <img style="border-radius:4px;" src="@Url.Content("~/img/upload/" + (item.Photo == null ? "600x300.gif" : (item.Photo.PhotoLarge03 == null ? "600x300.gif" : item.Photo.PhotoLarge03)))" href="@Url.Content("img/upload/" +(item.Photo == null ? "600x300.gif" : (item.Photo.PhotoLarge03 == null ? "600x300.gif" : item.Photo.PhotoLarge03)))" alt="" />
+                                        <div class="zoom-icon"></div>
+                                    </div>
+                                </a>
+                                <h5><a asp-area="" asp-controller="Customers" asp-action="Details" asp-route-id="@item.CusId">@item.CusName</a></h5>
+                                <p><a asp-area="" asp-controller="Customers" asp-action="Details" asp-route-id="@item.CusId" class="read-more">Chi tiết</a></p>
+                            </div>
+                        </div>
+                    }
+                </div><!--/thumbnails-->
+            </div>
+        </div>
+    </div>
+
+</section>
+<!-- end main contain -->

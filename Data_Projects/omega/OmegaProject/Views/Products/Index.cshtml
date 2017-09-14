@@ -1,0 +1,167 @@
+﻿@model IEnumerable<OmegaProject.Models.Product>
+
+@{
+    ViewData["Title"] = "Sản phẩm";
+    Layout = "~/Views/Shared/_LayoutBootClean.cshtml";
+}
+
+<!-- Sub intro -->
+<section id="subintro">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <h4>@ViewData["Title"]</h4>
+                <h6>Danh mục</h6>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End intro -->
+<!-- begin main contain -->
+<section id="maincontain" class="home-main">
+    <div class="intro-home padding-30">
+        <div class="container">
+            <div class="row">
+                <div class="span12">
+                    <div class="thumbnails">
+                        @{ int i = 0;}
+                        @foreach (Product item in Model)
+                        {
+                            if (i < 3)
+                            {
+                                <div class="span4" style="margin-bottom:10px;">
+                                    <div class="thumbnail">
+                                        <div class="overflow-hidden">
+                                            <img src="@Url.Content("~/img/upload/" + (item.Photo == null ? "" : (item.Photo.PhotoThumbNail == null ? "" : item.Photo.PhotoThumbNail)))" style="display:block;margin:auto;" alt="">
+                                            <a class="fancyme photo" href="@Url.Content("~/img/upload/" + (item.Photo == null ? "" : (item.Photo.PhotoThumbNail == null ? "" : item.Photo.PhotoThumbNail)))"><i class="icon-zoom-in"></i></a>
+                                            <a asp-controller="Products" asp-action="Details" asp-route-id="@item.ProdId" class="link"><i class="icon-link"></i></a>
+                                        </div>
+                                        <div class="caption">
+                                            <h5><a href="#">@item.ProdName</a></h5>
+                                            <p>@item.ProdDescription</p>
+                                            <p class="text-right"><a asp-controller="Products" asp-action="Details" asp-route-id="@item.ProdId" class="btn btn-flat btn-theme">Chi tiết</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                            i++;
+                        }
+                    </div><!--/thumbnails-->
+                </div>
+            </div>
+            <div class="row">
+                <div class="span12">
+                    <div class="thumbnails">
+                        @{ i = 0;}
+                        @foreach (Product item in Model)
+                        {
+                            if (i > 2 && i < 6)
+                            {
+                                <div class="span4"style="margin-bottom:10px;">
+                                    <div class="thumbnail">
+                                        <div class="overflow-hidden">
+                                            <img src="@Url.Content("~/img/upload/" +(item.Photo == null ? "" : (item.Photo.PhotoThumbNail == null ? "" : item.Photo.PhotoThumbNail)))" style="display:block;margin:auto;" alt="">
+                                            <a class="fancyme photo" href="@Url.Content("~/img/upload/" +(item.Photo == null ? "" : (item.Photo.PhotoThumbNail == null ? "" : item.Photo.PhotoThumbNail)))"><i class="icon-zoom-in"></i></a>
+                                            <a asp-controller="Products" asp-action="Details" asp-route-id="@item.ProdId" class="link"><i class="icon-link"></i></a>
+                                        </div>
+                                        <div class="caption">
+                                            <h5><a href="#">@item.ProdName</a></h5>
+                                            <p>@item.ProdDescription</p>
+                                            <p class="text-right"><a asp-controller="Products" asp-action="Details" asp-route-id="@item.ProdId" class="btn btn-flat btn-theme">Chi tiết</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                            i++;
+                        }
+                    </div><!--/thumbnails-->
+                </div>
+            </div>
+            <div class="row">
+                <div class="span12">
+                    <div class="thumbnails">
+                        @{ i = 0;}
+                        @foreach (Product item in Model)
+                        {
+                            if (i > 5 && i < 8)
+                            {
+                                <div class="span4" style="margin-bottom:10px;">
+                                    <div class="thumbnail">
+                                        <div class="overflow-hidden">
+                                            <img src="@Url.Content("~/img/upload/" +(item.Photo == null ? "" : (item.Photo.PhotoThumbNail == null ? "" : item.Photo.PhotoThumbNail)))" style="display:block;margin:auto;" alt="">
+                                            <a class="fancyme photo" href="@Url.Content("~/img/upload/" +(item.Photo == null ? "" : (item.Photo.PhotoThumbNail == null ? "" : item.Photo.PhotoThumbNail)))"><i class="icon-zoom-in"></i></a>
+                                            <a asp-controller="Products" asp-action="Details" asp-route-id="@item.ProdId" class="link"><i class="icon-link"></i></a>
+                                        </div>
+                                        <div class="caption">
+                                            <h5><a href="#">@item.ProdName</a></h5>
+                                            <p>@item.ProdDescription</p>
+                                            <p class="text-right"><a asp-controller="Products" asp-action="Details" asp-route-id="@item.ProdId" class="btn btn-flat btn-theme">Chi tiết</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                            i++;
+                        }
+                    </div><!--/thumbnails-->
+                </div>
+            </div>
+            <div class="row">
+                <div class="span12">
+                    <div class="thumbnails">
+                        @{ i = 0;}
+                        @foreach (Product item in Model)
+                        {
+                            if (i > 7 && i < 10)
+                            {
+                                <div class="span4" style="margin-bottom:10px;">
+                                    <div class="thumbnail">
+                                        <div class="overflow-hidden">
+                                            <img src="@Url.Content("~/img/upload/" +(item.Photo == null ? "" : (item.Photo.PhotoThumbNail == null ? "" : item.Photo.PhotoThumbNail)))" style="display:block;margin:auto;" alt="">
+                                            <a class="fancyme photo" href="@Url.Content("~/img/upload/" +(item.Photo == null ? "" : (item.Photo.PhotoThumbNail == null ? "" : item.Photo.PhotoThumbNail)))"><i class="icon-zoom-in"></i></a>
+                                            <a asp-controller="Products" asp-action="Details" asp-route-id="@item.ProdId" class="link"><i class="icon-link"></i></a>
+                                        </div>
+                                        <div class="caption">
+                                            <h5><a href="#">@item.ProdName</a></h5>
+                                            <p>@item.ProdDescription</p>
+                                            <p class="text-right"><a asp-controller="Products" asp-action="Details" asp-route-id="@item.ProdId" class="btn btn-flat btn-theme">Chi tiết</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                            i++;
+                        }
+                    </div><!--/thumbnails-->
+                </div>
+            </div>
+            <div class="row">
+                <div class="span12">
+                    <div class="thumbnails">
+                        @{ i = 0;}
+                        @foreach (Product item in Model)
+                        {
+                            if (i > 9 && i < 12)
+                            {
+                                <div class="span4" style="margin-bottom:10px;">
+                                    <div class="thumbnail">
+                                        <div class="overflow-hidden">
+                                            <img src="@Url.Content("~/img/upload/" +(item.Photo == null ? "" : (item.Photo.PhotoThumbNail == null ? "" : item.Photo.PhotoThumbNail)))" style="display:block;margin:auto;" alt="">
+                                            <a class="fancyme photo" href="@Url.Content("~/img/upload/" +(item.Photo == null ? "" : (item.Photo.PhotoThumbNail == null ? "" : item.Photo.PhotoThumbNail)))"><i class="icon-zoom-in"></i></a>
+                                            <a asp-controller="Products" asp-action="Details" asp-route-id="@item.ProdId" class="link"><i class="icon-link"></i></a>
+                                        </div>
+                                        <div class="caption">
+                                            <h5><a href="#">@item.ProdName</a></h5>
+                                            <p>@item.ProdDescription</p>
+                                            <p class="text-right"><a asp-controller="Products" asp-action="Details" asp-route-id="@item.ProdId" class="btn btn-flat btn-theme">Chi tiết</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                            i++;
+                        }
+                    </div><!--/thumbnails-->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end main contain -->

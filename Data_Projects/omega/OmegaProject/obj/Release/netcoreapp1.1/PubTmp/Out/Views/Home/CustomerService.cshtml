@@ -1,0 +1,137 @@
+﻿@model IEnumerable<OmegaProject.Models.Employee>
+@{
+    ViewData["Title"] = "Bảo hành & bảo trì";
+    Layout = "~/Views/Shared/_LayoutBootClean.cshtml";
+}
+<!-- begin title -->
+<section id="subintro">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <h4>@ViewData["Title"]</h4>
+                <h6>Warranty & Maintenance</h6>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end title -->
+<!-- begin main contain -->
+<section id="maincontain" class="home-main">
+    <div class="container">
+        <div class="row introduce">
+            <div class="span5">
+                <img style="border-radius:4px;" alt="" src="~/img/about-us/maintenance.jpg" />
+            </div>
+            <div class="span7">
+                <h4>Omega kính chào quý khách</h4>
+                <p style="font-size:13px;">Hậu mãi, thực hiện công việc chăm sóc khách hàng là một khâu cực kỳ quan trọng. Omega với đội ngũ bảo hành bảo trì chuyên nghiệp luôn phục vụ khách hàng tận tình, kịp thời và rất chu đáo.</p>
+                <p style="font-size:13px;">Hệ thống Quản trị doanh nghiệp OMEGA.ERP® được bảo hành miễn phí một năm. Sau thời gian bảo hành, Omega cam kết tiếp tục bảo trì phần mềm trong suốt thời gian sử dụng với hợp đồng bảo trì được ký hàng năm.</p>
+            </div>
+        </div>
+        <div class="row introduce">
+            <div class="span12">
+                <h4>Trong thời gian bảo hành, bảo trì, chúng tôi thực hiện các công việc sau:</h4>
+                <p style="font-size:13px;"><i class="fa fa-check"></i> Thông báo và cập nhật phiên bản mới khi có yêu cầu hoặc có sự thay đổi của phần mềm đáp ứng các quy định mới của cơ quan quản lý (Thuế, Bộ Tài Chính, Liên Đoàn Lao Động).</p>
+                <p style="font-size:13px;"><i class="fa fa-check"></i> Thông báo, nhắc nhở, hỗ trợ bên khách hàng sao lưu (Backup) dữ liệu định kỳ vào ngày cuối cùng của tháng.</p>
+                <p style="font-size:13px;"><i class="fa fa-check"></i> Cài đặt và cấp lại bản quyền phần mềm trong trường hợp khách hàng có sự hỏng hóc về máy tính.</p>
+                <p style="font-size:13px;"><i class="fa fa-check"></i> Hỗ trợ kiểm tra và giải đáp các thắc mắc của người dùng khi sử dụng phần mềm.</p>
+                <p style="font-size:13px;"><i class="fa fa-check"></i> Tư vấn nghiệp vụ phát sinh và cách thức hạch toán trên phần mềm.</p>
+                <p style="font-size:13px;"><i class="fa fa-check"></i> Hướng dẫn sử dụng.</p>
+                <p style="font-size:13px;"><i class="fa fa-check"></i> Chỉnh sửa báo cáo, khắc phục lỗi phần mềm (nếu có).</p>
+            </div>
+        </div>
+        <!-- second people line 1-->
+        <div class="row team-small padding-30">
+            @foreach (Employee item in Model)
+            {
+                if (item.DepId == 4)
+                {
+                    <div class="span4">
+                        <div class="picture">
+                            <img style="border-radius:4px;" alt="" src="@Url.Content("~/img/upload/" +(item.Photo == null ? "" : (item.Photo.PhotoThumbNail == null ? "" : item.Photo.PhotoThumbNail)))" />
+                        </div>
+                        <div class="desc">
+                            <h5>@item.EmpName</h5>
+                            <h6 class="under-line color">@item.Duty.DutyName</h6>
+                            <p>Phone : @item.Phone</p>
+                            <p>Skype : @item.Skype</p>
+                            <p><a href="mailto:@item.Email">@item.Email</a></p>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+        <hr />
+        <!-- second people line 2-->
+        <div class="row team-small padding-30">
+            @foreach (Employee item in Model)
+            {
+                if (item.DepId == 1)
+                {
+                    <div class="span4">
+                        <div class="picture">
+                            <img style="border-radius:4px;" alt="" src="@Url.Content("~/img/upload/" +(item.Photo == null ? "" : (item.Photo.PhotoThumbNail == null ? "" : item.Photo.PhotoThumbNail)))" />
+                        </div>
+                        <div class="desc">
+                            <h5>@item.EmpName</h5>
+                            <h6 class="under-line color">@item.Duty.DutyName</h6>
+                            <p>Phone : @item.Phone</p>
+                            <p>Skype : @item.Skype</p>
+                            <p><a href="mailto:@item.Email">@item.Email</a></p>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+        <hr />
+        <!-- pricing table-->
+        <div class="row introduce">
+            <div class="pricing-table pricing-3cols span4">
+                <div class="top-title">
+                    Cấp độ vàng<br />
+                    <span class="money">20% / Năm</span>
+                </div>
+                <div class="p-content">
+                    <ul class="package">
+                        <li>Nhân sự tùy chọn</li>
+                        <li>Thời gian cả tuần</li>
+                        <li>Tối thiểu 1 lần / tháng</li>
+                        <li>Đào tạo tối đa 12 ngày / năm</li>
+                        <li>Mức phí tối thiểu 20 triệu</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pricing-table pricing-3cols span4">
+                <div class="top-title">
+                    Cấp độ bạc<br />
+                    <span class="money">15% / Năm</span>
+                </div>
+                <div class="p-content">
+                    <ul class="package">
+                        <li>Nhân sự chỉ định</li>
+                        <li>Thời gian thứ 2 đến thứ 7</li>
+                        <li>Tối thiểu 1 lần / tháng</li>
+                        <li>Đào tạo tối đa 06 ngày / năm</li>
+                        <li>Mức phí tối thiểu 10 triệu</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pricing-table pricing-3cols span4">
+                <div class="top-title">
+                    Cấp độ đồng<br />
+                    <span class="money">10% / Năm</span>
+                </div>
+                <div class="p-content">
+                    <ul class="package">
+                        <li>Nhân sự chỉ định</li>
+                        <li>Thời gian thứ 2 đến thứ 6</li>
+                        <li>Tối thiểu 1 lần / quý</li>
+                        <li>Đào tạo tối đa 02 ngày / năm</li>
+                        <li>Mức phí tối thiểu 03 triệu</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end main contain -->

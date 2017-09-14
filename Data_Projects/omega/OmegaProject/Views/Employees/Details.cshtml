@@ -1,0 +1,79 @@
+﻿@model OmegaProject.Models.Employee
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Mã nhân viên
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EmpNo)
+        </dd>
+        <dt>
+            Tên nhân viên
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EmpName)
+        </dd>
+        <dt>
+            Số điện thoại
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+        <dt>
+            Email
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+            Giới tính
+        </dt>
+        <dd>
+            @(Model.EmpGender ? "Nam" : "Nữ")
+        </dd>
+        <dt>
+            Không hiển thị
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EmpDisabled)
+        </dd>
+        <dt>
+            Phòng ban
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Dep.DepName)
+        </dd>
+        <dt>
+            Chức vụ
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Duty.DutyName)
+        </dd>
+        <dt>
+            Hình ảnh
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Photo.PhotoName)
+        </dd>
+        <dt>
+            Trạng thái
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Status.StatusName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.EmpId">Chỉnh sửa</a> |
+    <a asp-action="Index">Trở lại danh sách</a>
+</div>

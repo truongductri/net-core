@@ -1,0 +1,180 @@
+﻿@{
+    ViewData["Title"] = "Trang chủ";
+    Layout = "_LayoutBootClean";
+}
+
+<!-- begin home slide show -->
+<section id="intro">
+    <div class="iview-slider">
+        <div id="iview">
+            @{ int i = 0;}
+            @foreach (Event item in ViewBag.Events)
+            {
+                if (i == 0)
+                {
+                    <div data-iview:image="@item.Photo.PhotoThumbNail">
+                    </div>
+                }
+                else
+                {
+                    <div data-iview:transition="block-drop-random" data-iview:pausetime="3000" data-iview:image="@item.Photo.PhotoThumbNail">
+                    </div>
+                }
+                i++;
+            }
+        </div>
+    </div>
+</section>
+<!-- end home slide show -->
+<!-- begin main contain -->
+<section id="maincontain" class="home-main">
+    <div class="feature feature-full-bg">
+        <div class="container">
+            <div class="row">
+                <div class="span4">
+                    <div class="feature-item clearfix">
+                        <div class="pull-left">
+                            <i class="icon-cogs icon-3x"></i>
+                        </div>
+                        <div class="desc">
+                            <h5>CÔNG NGHỆ TIÊN TIẾN</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="span4">
+                    <div class="feature-item clearfix">
+                        <div class="pull-left">
+                            <i class="icon-group icon-3x"></i>
+                        </div>
+                        <div class="desc">
+                            <h5>ĐA NGƯỜI DÙNG</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="span4">
+                    <div class="feature-item clearfix">
+                        <div class="pull-left">
+                            <i class="icon-rocket icon-3x"></i>
+                        </div>
+                        <div class="desc">
+                            <h5>ỔN ĐỊNH, XỬ LÝ NHANH</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-top:5px;">
+                <div class="span4">
+                    <div class="feature-item clearfix">
+                        <div class="pull-left">
+                            <i class="icon-desktop icon-3x"></i>
+                        </div>
+                        <div class="desc">
+                            <h5>GIAO DIỆN ĐẸP VÀ THÂN THIỆN</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="span4">
+                    <div class="feature-item clearfix">
+                        <div class="pull-left">
+                            <i class="icon-globe icon-3x"></i>
+                        </div>
+                        <div class="desc">
+                            <h5>ĐA NGÔN NGỮ</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="span4">
+                    <div class="feature-item clearfix">
+                        <div class="pull-left">
+                            <i class="icon-bar-chart icon-3x"></i>
+                        </div>
+                        <div class="desc">
+                            <h5>BÁO CÁO PHONG PHÚ, ĐA DẠNG</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="intro-home padding-30">
+        <div class="container">
+            <div class="row">
+                <div class="span12">
+                    <div class="thumbnails">
+                        @{ i = 0;}
+                        @foreach (Product item in ViewBag.Products)
+                        {
+                            if (i < 3)
+                            {
+                                <div class="span4">
+                                    <div class="thumbnail">
+                                        <div class="overflow-hidden">
+                                            <img src="@Url.Content("~/img/upload/" +(item.Photo == null ? "" : (item.Photo.PhotoThumbNail == null ? "" : item.Photo.PhotoThumbNail)))" style="display:block;margin:auto;" alt="">
+                                            <a class="fancyme photo" href="@Url.Content("~/img/upload/" +(item.Photo == null ? "" : (item.Photo.PhotoThumbNail == null ? "" : item.Photo.PhotoThumbNail)))"><i class="icon-zoom-in"></i></a>
+                                            <a asp-controller="Products" asp-action="Details" asp-route-id="@item.ProdId" class="link"><i class="icon-link"></i></a>
+                                        </div>
+                                        <div class="caption">
+                                            <h5><a href="#">@item.ProdName</a></h5>
+                                            <p>@item.ProdDescription.Substring(0, 120) ...</p>
+                                            <p class="text-right"><a asp-controller="Products" asp-action="Details" asp-route-id="@item.ProdId" class="btn btn-flat btn-theme">Chi tiết</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                            i++;
+                        }
+                    </div><!--/thumbnails-->
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="span12">
+                    <div class="thumbnails">
+                        @{ i = 0;}
+                        @foreach (Product item in ViewBag.Products)
+                        {
+                            if (i > 2)
+                            {
+                                <div class="span4">
+                                    <div class="thumbnail">
+                                        <div class="overflow-hidden">
+                                            <img src="@Url.Content("~/img/upload/" +(item.Photo == null ? "" : (item.Photo.PhotoThumbNail == null ? "" : item.Photo.PhotoThumbNail)))" style="display:block;margin:auto;" alt="">
+                                            <a class="fancyme photo" href="@Url.Content("~/img/upload/" +(item.Photo == null ? "" : (item.Photo.PhotoThumbNail == null ? "" : item.Photo.PhotoThumbNail)))"><i class="icon-zoom-in"></i></a>
+                                            <a asp-controller="Products" asp-action="Details" asp-route-id="@item.ProdId" class="link"><i class="icon-link"></i></a>
+                                        </div>
+                                        <div class="caption">
+                                            <h5><a href="#">@item.ProdName</a></h5>
+                                            <p>@item.ProdDescription.Substring(0, 120) ...</p>
+                                            <p class="text-right"><a asp-controller="Products" asp-action="Details" asp-route-id="@item.ProdId" class="btn btn-flat btn-theme">Chi tiết</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                            i++;
+                        }
+                    </div><!--/thumbnails-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="home-projects">
+        <div class="container">
+            <div class="row">
+                <div class="span12">
+                    <!-- Our Clients -->
+                    <div id="clients-flexslider" class="flexslider home clients">
+                        <h4 class="under-line">KHÁCH HÀNG</h4>
+                        <ul class="slides">
+                            @foreach (Customer item in ViewBag.Customers)
+                            {
+                                <li><a asp-controller="Customers" asp-action="Details" asp-route-id="@item.CusId"><img src="@Url.Content("~/img/upload/" +(item.Photo == null ? "" : (item.Photo.PhotoThumbNail == null ? "" : item.Photo.PhotoThumbNail)))" alt="" title="@item.CusName" /></a></li>
+                            }
+                        </ul>
+                    </div><!--/flexslider-->
+                    <!-- //End Our Clients -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end main contain -->  

@@ -1,0 +1,66 @@
+@model OmegaProject.Models.Customer
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Customer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <input type="hidden" asp-for="CusId" />
+        <dt>
+            @Html.DisplayNameFor(model => model.CusNo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CusNo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CusName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CusName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CusDateCreate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CusDateCreate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CusLastUpdate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CusLastUpdate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Bra)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Bra.BraId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Photo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Photo.PhotoId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Status.StatusId)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </form>
+</div>

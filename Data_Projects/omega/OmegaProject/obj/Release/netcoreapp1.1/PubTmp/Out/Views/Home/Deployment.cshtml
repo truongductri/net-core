@@ -1,0 +1,131 @@
+﻿@model IEnumerable<OmegaProject.Models.Employee>
+@{
+    ViewData["Title"] = "Tư vấn triển khai";
+    Layout = "~/Views/Shared/_LayoutBootClean.cshtml";
+}
+
+<!-- Sub intro -->
+<section id="subintro">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <h4>@ViewData["Title"]</h4>
+                <h6>Consulting Services</h6>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End intro -->
+<!-- begin main contain -->
+<section id="maincontain" class="home-main">
+    <div class="container">
+        <div class="row introduce-services">
+            <div class="span5">
+                <img style="border-radius:4px;" alt="" src="~/img/about-us/consulting-services.jpg" />
+            </div>
+            <div class="span7">
+                <p style="font-size:13px;">Song song với Hệ thống Quản trị doanh nghiệp OMEGA.ERP®, Công ty Omega có đội ngũ tư vấn triển khai chuyên nghiệp, giàu kinh nghiệm, tinh thông kiến thức tài chính kế toán và quản trị doanh nghiệp.</p>
+                <p style="font-size:13px;">Công việc của tư vấn triển khai phần mềm được chuẩn hoá thành quy trình với các bước thực hiện công việc rõ ràng.</p>
+                <p style="font-size:13px;">Các lĩnh vực tư vấn :</p>
+                <p style="font-size:13px;">1. Áp dụng thay đổi của các Thông tư, Quyết định mới của Bộ Tài chính và Tổng cục Thuế</p>
+                <p style="font-size:13px;">2. Thực hiện các chuẩn mực kế toán phù hợp với đặc thù của từng doanh nghiệp.</p>
+                <p style="font-size:13px;">3. Tổ chức bộ máy kế toán, luân chuyển chứng từ, xây dựng hệ thống định danh mã và quy trình phù hợp với việc ứng dụng CNTT trong quản lý doanh nghiệp</p>
+            </div>
+        </div>
+        <!-- second people line 1-->
+        @{ int i = 0;}
+        <div class="row team-small padding-30">
+            @foreach (Employee item in Model)
+            {
+                if (i < 3)
+                {
+                    <div class="span4">
+                        <div class="picture">
+                            <img style="border-radius:4px;" alt="" src="@Url.Content("~/img/upload/" +(item.Photo == null ? "" : (item.Photo.PhotoThumbNail == null ? "" : item.Photo.PhotoThumbNail)))" />
+                        </div>
+                        <div class="desc">
+                            <h5>@item.EmpName</h5>
+                            <h6 class="under-line color">@item.Duty.DutyName</h6>
+                            <p>Phone : @item.Phone</p>
+                            <p>Skype : @item.Skype</p>
+                            <p><a href="mailto:@item.Email">@item.Email</a></p>
+                        </div>
+                    </div>
+                }
+                i++;
+            }
+        </div>
+        <hr />
+        <!-- second people line 2-->
+        @{ i = 0;}
+        <div class="row team-small padding-30">
+            @foreach (Employee item in Model)
+            {
+                if (i > 2)
+                {
+                    <div class="span4">
+                        <div class="picture">
+                            <img style="border-radius:4px;" alt="" src="@Url.Content("~/img/upload/" +(item.Photo == null ? "" : (item.Photo.PhotoThumbNail == null ? "" : item.Photo.PhotoThumbNail)))" />
+                        </div>
+                        <div class="desc">
+                            <h5>@item.EmpName</h5>
+                            <h6 class="under-line color">@item.Duty.DutyName</h6>
+                            <p>Phone : @item.Phone</p>
+                            <p>Skype : @item.Skype</p>
+                            <p><a href="mailto:@item.Email">@item.Email</a></p>
+                        </div>
+                    </div>
+                }
+                i++;
+            }
+        </div>
+        <hr />
+        <div class="row more-infomation">
+            <h3>Quy trình triển khai</h3>
+            <div class="span4">
+                <div class="testimonial-item">
+                    <h5>Bước 1 : Khởi tạo dự án</h5>
+                    <p><b>Bổ nhiệm nhân lực</b> hai bên tiến hành bổ nhiệm nhân sự tham gia dự án, gồm có trưởng dự án và các thành viên</p>
+                    <p><b>Kế hoạch tổng quan</b> lập kế hoạch triển khai, mô tả tổng quan tiến trình các bước thực hiện</p>
+                </div>
+            </div>
+            <div class="span4">
+                <div class="testimonial-item">
+                    <h5>Bước 2 : Khảo sát hệ thống</h5>
+                    <p><b>Khảo sát phần cứng</b> hệ thống máy tính, mạng nội bộ, đường truyền,…</p>
+                    <p><b>Khảo sát nghiệp vụ</b> làm rõ các vấn đề về tổ chức hạch toán, tổ chức luân chuyển chứng từ, phương pháp hạch toán, định dạng và chỉ tiêu báo cáo ...</p>
+                </div>
+            </div>
+            <div class="span4">
+                <div class="testimonial-item">
+                    <h5>Bước 3 : Thiết kế - Tư vấn</h5>
+                    <p>Trên cơ sở dữ liệu nắm bắt ở bước khảo sát, ban dự án hai bên tiến hành họp bàn để thông qua các giải pháp về đặt mã, luân chuyển dữ liệu, nguyên tắc hạch toán, biểu mẫu báo cáo, chứng từ,… Và được soạn thảo thành tài liệu giải pháp ứng dụng phần mềm vào công tác quản lý.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row more-infomation">
+            <div class="span4">
+                <div class="testimonial-item">
+                    <h5>Bước 4 : Cài đặt - Đào tạo</h5>
+                    <p>Tiến hành cài đặt phần mềm OMEGA.ERP®</p>
+                    <p>Công ty Omega tiến hành đào tạo chi tiết các nghiệp vụ số dư, phát sinh, xử lý số liệu và truy vấn các báo cáo cho khách hàng theo kế hoạch đã thống nhất ở Bước 3</p>
+                </div>
+            </div>
+            <div class="span4">
+                <div class="testimonial-item">
+                    <h5>Bước 5 : Kiểm thử</h5>
+                    <p>Các quy trình tác nghiệp tiêu biểu được lựa chọn để đưa vào thử nghiệm trong chương trình. Các bút toán sẽ được lần lượt nhập vào và được kiểm tra về tính chính xác. Trong giai đoạn này các chuyên viên tư vấn Omega cùng với nhân sự của khách hàng kiểm tra tính chính xác của số liệu, tinh chỉnh một số biểu mẫu báo cáo.</p>
+                </div>
+            </div>
+            <div class="span4">
+                <div class="testimonial-item">
+                    <h5>Bước 6 : Nghiệm thu - Chuyển giao</h5>
+                    <p>Sau khi việc chạy thử đã đạt kết quả tốt, hai bên tiến hành nghiệm thu. Công ty Omega sẽ bàn giao chương trình và các tài liệu cần thiết cho khách hàng.</p>
+                    <p><b>Bảo hành</b>Thời gian bảo hành sẽ được tính kể từ khi hai bên ký nghiệm thu hệ thống. Chi tiết về công việc bảo trì được quy định trong hợp đồng.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end main contain -->
+

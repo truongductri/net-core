@@ -1,0 +1,87 @@
+﻿@model OmegaProject.Models.Post
+
+@{
+    ViewData["Title"] = "Bài đăng";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Thêm mới</h2>
+
+<form asp-action="Create">
+    <div class="form-horizontal">
+        <h4>Bài đăng</h4>
+        <a asp-action="Index">Trở lại danh sách</a>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Tiêu đề</label>
+            <div class="col-md-10">
+                <input asp-for="PostTitle" class="form-control" />
+                <span asp-validation-for="PostTitle" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Nội dung</label>
+            <div class="col-md-10">
+                <textarea id="PostContent" asp-for="PostContent" class="form-control" ></textarea>
+                <span asp-validation-for="PostContent" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Mô tả</label>
+            <div class="col-md-10">
+                <input asp-for="PostDescription" class="form-control" maxlength="300" />
+                <span asp-validation-for="PostDescription" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Nhãn (;)</label>
+            <div class="col-md-10">
+                <input asp-for="PostLabel" class="form-control" maxlength="300" required />
+                <span asp-validation-for="PostLabel" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <div class="checkbox">
+                    <input asp-for="PostDisabled" />
+                    <label>Không hiển thị</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Trạng thái</label>
+            <div class="col-md-10">
+                <select asp-for="StatusId" class="form-control" asp-items="ViewBag.StatusId"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Hạng loại</label>
+            <div class="col-md-10">
+                <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Hình ảnh</label>
+            <div class="col-md-10">
+                <select asp-for="PhotoId" class="form-control" asp-items="ViewBag.PhotoId"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+@section Scripts{
+    <script src="~/lib/ckeditor/ckeditor.js"></script>
+    <script src="~/lib/ckeditor/adapters/jquery.js"></script>
+    <script>
+        $("#PostContent").ckeditor();
+    </script>
+}
+
+
+
+

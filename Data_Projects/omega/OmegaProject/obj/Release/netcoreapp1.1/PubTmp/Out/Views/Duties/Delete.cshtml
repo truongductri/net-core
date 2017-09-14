@@ -1,0 +1,48 @@
+﻿@model OmegaProject.Models.Duty
+
+@{
+    ViewData["Title"] = "Xóa";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Xóa</h2>
+
+<h3>Bạn có chắc chắn muốn xóa không ?</h3>
+<div>
+    <h4>Chức vụ</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <input type="hidden" asp-for="DutyId" />
+        <dt>
+            Mã chức vụ
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DutyNo)
+        </dd>
+        <dt>
+            Tên chức vụ
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DutyName)
+        </dd>
+        <dt>
+            Ghi chú
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DutyNotes)
+        </dd>
+        <dt>
+            Không hiển thị
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DutyDisabled)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <a asp-action="Index">Trở lại danh sách</a>
+        </div>
+    </form>
+</div>

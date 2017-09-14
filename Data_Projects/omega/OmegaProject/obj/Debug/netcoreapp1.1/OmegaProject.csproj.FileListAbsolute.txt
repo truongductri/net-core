@@ -1,0 +1,10 @@
+D:\Work\Solution\OmegaProject\OmegaProject\bin\Debug\netcoreapp1.1\OmegaProject.deps.json
+D:\Work\Solution\OmegaProject\OmegaProject\bin\Debug\netcoreapp1.1\OmegaProject.runtimeconfig.json
+D:\Work\Solution\OmegaProject\OmegaProject\bin\Debug\netcoreapp1.1\OmegaProject.runtimeconfig.dev.json
+D:\Work\Solution\OmegaProject\OmegaProject\bin\Debug\netcoreapp1.1\OmegaProject.dll
+D:\Work\Solution\OmegaProject\OmegaProject\bin\Debug\netcoreapp1.1\OmegaProject.pdb
+D:\Work\Solution\OmegaProject\OmegaProject\obj\Debug\netcoreapp1.1\OmegaProject.csprojResolveAssemblyReference.cache
+D:\Work\Solution\OmegaProject\OmegaProject\obj\Debug\netcoreapp1.1\OmegaProject.AssemblyInfo.cs
+D:\Work\Solution\OmegaProject\OmegaProject\obj\Debug\netcoreapp1.1\OmegaProject.dll
+D:\Work\Solution\OmegaProject\OmegaProject\obj\Debug\netcoreapp1.1\OmegaProject.pdb
+D:\Work\Solution\OmegaProject\OmegaProject\obj\Debug\netcoreapp1.1\UserSecretsAssemblyInfo.cs

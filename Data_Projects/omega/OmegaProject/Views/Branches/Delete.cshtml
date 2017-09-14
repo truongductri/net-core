@@ -1,0 +1,49 @@
+﻿@model OmegaProject.Models.Branch
+
+@{
+    ViewData["Title"] = "Xóa";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Xóa</h2>
+
+<h3>Bạn có chắc chắn muốn xóa không ?</h3>
+<div>
+    <h4>Branch</h4>
+    <a asp-action="Index">Trở lại danh sách</a>
+    <hr />
+    <dl class="dl-horizontal">
+        <input type="hidden" asp-for="BraId" />
+        <dt>
+            Mã ngành hàng
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BraNo)
+        </dd>
+        <dt>
+            Tên ngành hàng
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BraName)
+        </dd>
+        <dt>
+            Ghi chú
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BraNotes)
+        </dd>
+        <dt>
+            Không hiển thị
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BraDisabled)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            
+        </div>
+    </form>
+</div>

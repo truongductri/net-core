@@ -1,0 +1,53 @@
+﻿@model OmegaProject.Models.Branch
+
+@{
+    ViewData["Title"] = "Ngành hàng";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chỉnh sửa</h2>
+
+<form asp-action="Edit">
+    <div class="form-horizontal">
+        <h4>Ngành hàng</h4>
+        <a asp-action="Index">Trở lại danh sách</a>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="BraId" />
+        <div class="form-group">
+            <label class="col-md-2 control-label">Mã ngành hàng</label>
+            <div class="col-md-10">
+                <input asp-for="BraNo" class="form-control" />
+                <span asp-validation-for="BraNo" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Tên ngành hàng</label>
+            <div class="col-md-10">
+                <input asp-for="BraName" class="form-control" />
+                <span asp-validation-for="BraName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Ghi chú</label>
+            <div class="col-md-10">
+                <input asp-for="BraNotes" class="form-control" />
+                <span asp-validation-for="BraNotes" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <div class="checkbox">
+                    <input asp-for="BraDisabled" />
+                    <label>Không hiển thị</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+

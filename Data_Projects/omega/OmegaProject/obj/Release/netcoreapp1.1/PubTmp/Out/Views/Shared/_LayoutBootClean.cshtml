@@ -1,0 +1,229 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.Title - Omega</title>
+
+    <environment names="Development">
+        <link rel="stylesheet" type="text/css" href="~/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="~/css/bootstrap-responsive.min.css" />
+        <link rel="stylesheet" type="text/css" href="~/css/sequence-slider.css" />
+        <link rel="stylesheet" type="text/css" href="~/css/sequence-slider.responsive.css" />
+        <!-- Slider -->
+        <link rel="stylesheet" type="text/css" href="~/css/iview.css" />
+        <link rel="stylesheet" type="text/css" href="~/css/iview.setting.css" />
+        <link rel="stylesheet" type="text/css" href="~/css/flexslider.css" />
+        <link rel="stylesheet" type="text/css" href="~/css/flexslider.setting.css" />
+        <link rel="stylesheet" type="text/css" href="~/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="~/css/style.responsive.css" />
+        <!-- colors -->
+        <link rel="stylesheet" type="text/css" href="~/css/colors/default.css" />
+        <link rel="icon" type="image/x-icon" href="~/img/ICON.ico" />
+    </environment>
+    <environment names="Staging,Production">
+        <link rel="stylesheet" type="text/css" href="~/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="~/css/bootstrap-responsive.min.css" />
+        <link rel="stylesheet" type="text/css" href="~/css/sequence-slider.min.css" />
+        <link rel="stylesheet" type="text/css" href="~/css/sequence-slider.responsive.min.css"/>
+        <!-- Slider -->
+        <link rel="stylesheet" type="text/css" href="~/css/iview.css" />
+        <link rel="stylesheet" type="text/css" href="~/css/iview.setting.css" />
+        <link rel="stylesheet" type="text/css" href="~/css/flexslider.min.css" />
+        <link rel="stylesheet" type="text/css" href="~/css/flexslider.setting.min.css" />
+        <link rel="stylesheet" type="text/css" href="~/css/style.min.css" />
+        <link rel="stylesheet" type="text/css" href="~/css/style.responsive.min.css" />
+        <!-- colors -->
+        <link rel="stylesheet" type="text/css" href="~/css/colors.min.css" />
+        <link rel="icon" type="image/x-icon" href="~/img/ICON.ico" />
+    </environment>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <div class="container">
+                <div class="row">
+                    <div class="span5 logo">
+                        <a href=".">
+                            <img alt="BootClean" src="~/img/logo.png" />
+                        </a>
+                    </div>
+                    <div class="span6 social pull-right">
+                        <ul class="social-top" style="font-size:13px;">
+                            <li class="active"><i class="icon-phone-sign"></i> <span style="font-size:15px;color:orange;"><b>HOTLINE : (+84) 908 303 609 - 0908 303 608</b></span></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- /.row -->
+            </div>
+        </header>
+
+        <!-- begin navbar -->
+        <div class="navbar">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!--mobile collapse menu button-->
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <i class="icon-list"></i> Menu
+                    </a>
+                    <!-- main navigation-->
+                    <form asp-area="" asp-controller="Account" asp-action="Logout" method="post" id="logoutForm">
+                        <div class="navigation nav-collapse collapse">
+                            <ul class="nav" id="nav">
+                                <li class="@((ViewContext.RouteData.Values["Controller"].ToString() == "Home" && ViewContext.RouteData.Values["Action"].ToString() == "Index") ? "active dropdown-submenu" : "dropdown-submenu")">
+                                    <a asp-area="" asp-controller="Home" asp-action="Index">TRANG CHỦ</a>
+                                </li>
+                                <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "About" ? "active dropdown-submenu" : "dropdown-submenu")">
+                                    <a asp-area="" asp-controller="Home" asp-action="About">GIỚI THIỆU</a>
+                                </li>
+                                <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Products" ? "active dropdown-submenu" : "dropdown-submenu")">
+                                    <a asp-area="" asp-controller="Products" asp-action="Index">SẢN PHẨM</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a asp-area="" asp-controller="Products" asp-action="Details" asp-route-id="1">HỆ THỐNG QUẢN TRỊ DOANH NGHIỆP</a></li>
+                                        <li><a asp-area="" asp-controller="Products" asp-action="Details" asp-route-id="2">HỆ THỐNG QUẢN LÝ ĐÀO TẠO</a></li>
+                                        <li><a asp-area="" asp-controller="Products" asp-action="Details" asp-route-id="3">HỆ THỐNG QUẢN TRỊ NHÂN SỰ</a></li>
+                                        <li><a asp-area="" asp-controller="Products" asp-action="Details" asp-route-id="4">PHẦN MỀM QUẢN LÝ HÓA ĐƠN</a></li>
+                                        <li><a asp-area="" asp-controller="Products" asp-action="Details" asp-route-id="5">PHẦN MỀM QUẢN LÝ KHÁCH HÀNG</a></li>
+                                        <li><a asp-area="" asp-controller="Products" asp-action="Details" asp-route-id="6">PHẦN MỀM KẾ TOÁN CHUYÊN NGHIỆP</a></li>
+                                    </ul>
+                                </li>
+                                <li class="@((ViewContext.RouteData.Values["Action"].ToString() == "Deployment" || ViewContext.RouteData.Values["Action"].ToString() == "CustomerService") ? "active dropdown-submenu" : "dropdown-submenu")">
+                                    <a href="#">DỊCH VỤ</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a asp-area="" asp-controller="Home" asp-action="Deployment">Tư vấn - Triển khai</a></li>
+                                        <li><a asp-area="" asp-controller="Home" asp-action="CustomerService">Bảo hành & Bảo trì</a></li>
+                                    </ul>
+                                </li>
+                                <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Customers" ? "active dropdown-submenu" : "dropdown-submenu")">
+                                    <a asp-area="" asp-controller="Customers" asp-action="Index">KHÁCH HÀNG</a>
+                                </li>
+                                <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Posts" ? "active dropdown-submenu" : "dropdown-submenu")">
+                                    <a asp-area="" asp-controller="Posts" asp-action="Index">TIN TỨC</a>
+                                </li>
+                                <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "ContactUs" ? "active dropdown-submenu" : "dropdown-submenu")">
+                                    <a asp-area="" asp-controller="ContactUs" asp-action="Create">LIÊN HỆ</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+                <!-- /.container -->
+            </div>
+            <!-- /.navbar-inner -->
+        </div>
+        <!-- end navbar -->
+
+        @RenderBody()
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="span4">
+                        <h4>TRỤ SỞ CHÍNH</h4>
+                        <ul class="vcard">
+                            <li>
+                                <span class="vcard-icon"><i class="icon-home"></i></span>
+                                <span class="vcard-text">Số 32 Đường D5, Phường 25,Bình Thạnh, HCM</span>
+                            </li>
+                            <li>
+                                <span class="vcard-icon"><i class="icon-phone"></i></span>
+                                <span class="vcard-text">(+84-28) 3512 8448, Fax: (+84-28) 3512 7280</span>
+                            </li>
+                            <li>
+                                <span class="vcard-icon"><i class="icon-phone"></i></span>
+                                <span class="vcard-text">(+84-28) 3512 8429, (+84-28) 3512 8430</span>
+                            </li>
+                            <li>
+                                <span class="vcard-icon"><i class="icon-envelope"></i></span>
+                                <span class="vcard-text"><a href="mailto:info@omega.com.vn">info@omega.com.vn</a></span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="span4">
+                        <h4>CHI NHÁNH HÀ NỘI</h4>
+                        <ul class="vcard">
+                            <li>
+                                <span class="vcard-icon"><i class="icon-home"></i></span>
+                                <span class="vcard-text">P1907 - Số 51 Quan Nhân- Thanh Xuân- Hà Nội</span>
+                            </li>
+                            <li>
+                                <span class="vcard-icon"><i class="icon-phone"></i></span>
+                                <span class="vcard-text">(+84-24) 62 963 013, Fax: (+84-24) 3976 4647</span>
+                            </li>
+                            <li>
+                                <span class="vcard-icon"><i class="icon-phone"></i></span>
+                                <span class="vcard-text">(+84) 982 180 976 - Mr. Long</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="span4 pull-right">
+                        <div class="get-in-touch pull-right">
+                            <h4>ĐĂNG KÝ NHẬN THÔNG TIN</h4>
+                            <form class="form-inline validate" asp-controller="ContactUs" asp-action="Subscribe">
+                                <input id="email" name="email" type="email" placeholder="Enter your email address ..." class="form-control" required />
+                                <button type="submit" class="btn btn-white">Submit</button>
+                            </form>
+                            <ul class="social-menu">
+                                <li class="rss"><a title="Rss Feed" href="#">Rss Feed</a></li>
+                                <li class="googleplus"><a title="Google+" href="#">Google+</a></li>
+                                <li class="facebook"><a title="Facebook" href="#">Facebook</a></li>
+                                <li class="twitter"><a title="Twitter" href="#">Twitter</a></li>
+                                <li class="linkedin"><a title="Linked In" href="#">Linked In</a></li>
+                                <li class="pinterest"><a title="Pinterest" href="#">Pinterest</a></li>
+                                <li class="instagram"><a title="Instagram" href="#">Instagram</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="verybottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="span9 centered">
+                            <ul class="footer-nav">
+                                <li><a asp-area="" asp-controller="Home" asp-action="Index">TRANG CHỦ</a></li>
+                                <li><a asp-area="" asp-controller="Home" asp-action="About">GIỚI THIỆU</a></li>
+                                <li><a asp-area="" asp-controller="Products" asp-action="Index">SẢN PHẨM</a></li>
+                                <li><a asp-area="" asp-controller="Home" asp-action="CustomerService">DỊCH VỤ</a></li>
+                                <li><a asp-area="" asp-controller="Customers" asp-action="Index">KHÁCH HÀNG</a></li>
+                                <li><a asp-area="" asp-controller="Posts" asp-action="Index">TIN TỨC</a></li>
+                                <li><a asp-area="" asp-controller="Home" asp-action="Contact">LIÊN HỆ</a></li>
+                            </ul>
+                        </div>
+                        <div class="span3 pull-right">
+                            <p class="pull-right copy-right">
+                                &copy; 2017 by Omega Company
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <span class="backToTop"><a href="#top"><i class="icon-double-angle-up"></i></a></span>
+
+
+    <environment names="Development">
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="~/js/jquery-1.8.2.min.js"></script>
+        <script src="~/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="~/js/modernizr.custom.17475.js" type="text/javascript"></script>
+        <script src="~/js/sequence.jquery-min.js"></script>
+        <script src="~/js/raphael-min.js"></script>
+        <script src="~/js/jquery.easing.1.3.js"></script>
+        <script src="~/js/jquery.flexslider.js"></script>
+        <script src="~/js/iview.js"></script>
+        <script src="~/js/jquery.quicksand.js" type="text/javascript"></script>
+        <script src="~/js/jquery.carouFredSel-6.2.1-packed.js" type="text/javascript"></script>
+        <!-- validation form -->
+        <script src="~/js/jquery.placeholder.min.js" type="text/javascript"></script>
+        <script src="~/js/function.js"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="~/js/jquery-1.8.2.min.js"></script>
+        <script src="~/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="~/js/function.min.js" asp-append-version="true"></script>
+    </environment>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

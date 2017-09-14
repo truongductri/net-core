@@ -1,0 +1,48 @@
+﻿@model OmegaProject.Models.Department
+
+@{
+    ViewData["Title"] = "Phòng ban";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Xóa</h2>
+
+<h3>bạn có chắc chắn muốn xóa không ?</h3>
+<div>
+    <h4>Phòng ban</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <input type="hidden" asp-for="DepId" />
+        <dt>
+            Mã phòng ban
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DepNo)
+        </dd>
+        <dt>
+            Tên phòng ban
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DepName)
+        </dd>
+        <dt>
+            Ghi chú
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DepNotes)
+        </dd>
+        <dt>
+            Không hiển thị
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DepDisabled)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <a asp-action="Index">Trở lại danh sách</a>
+        </div>
+    </form>
+</div>

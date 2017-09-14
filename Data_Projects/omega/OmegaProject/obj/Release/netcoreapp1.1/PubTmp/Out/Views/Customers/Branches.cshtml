@@ -1,0 +1,76 @@
+﻿@{
+    ViewData["Title"] = "Khách hàng";
+    Layout = "~/Views/Shared/_LayoutBootClean.cshtml";
+}
+<!-- Sub intro -->
+<section id="subintro">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <h4>@ViewData["Title"]</h4>
+                <h6>Danh mục</h6>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End intro -->
+<!-- begin main contain -->
+<section id="maincontain">
+    <div class="container main-content">
+        <div class="row blog">
+            <div class="span9 primary-column pull-right">
+                <div class="row small-size">
+                    <ul id="easyPaginate" class="portfolio-area">
+
+                        @foreach (Customer item in ViewBag.Customers)
+                        {
+                            <li class="portfolio-item">
+                                <div class="span3">
+                                    <div class="view style1" style="border-radius:4px;">
+                                        <img style="border-radius:4px;" src="@Url.Content("~/img/upload/" +(item.Photo == null ? "~/img/upload/600x400.gif" : (item.Photo.PhotoLarge01 == null ? "~/img/upload/600x400.gif" : item.Photo.PhotoLarge01)))" alt="Portfolio name" title="">
+                                        <div class="mask">
+                                            <h4>@item.CusNo</h4>
+                                            <p>@item.CusName</p>
+                                            <a class="fancyme" href="@Url.Content("~/img/upload/" +(item.Photo == null ? "~/img/upload/973x500.gif" : (item.Photo.PhotoLarge01 == null ? "~/img/upload/973x500.gif" : item.Photo.PhotoLarge01)))"><i class="icon-zoom-in"></i></a>
+                                            <a asp-area="" asp-controller="Customers" asp-action="Details" asp-route-id="@item.CusId"><i class="icon-link"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        }
+
+                    </ul>
+                </div>
+            </div>
+            <div class="span3 slidebar sidebar-left pull-left">
+                <div class="widget categories">
+                    <ul class="categories-item">
+                        <li><a asp-action="Index">Tất cả</a></li>
+                        @foreach (Branch item in ViewBag.Branchs)
+                        {
+                            <li><a asp-action="Branches" asp-route-id="@item.BraId">@item.BraName</a></li>
+                        }
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- end main contain -->
+@section Scripts{
+    <script src="~/js/jquery.easyPaginate.js"></script>
+    <script type="text/javascript">
+        $('#easyPaginate').easyPaginate({
+            paginateElement: 'li',
+            elementsPerPage: 15,
+            effect: 'climb'
+        });
+        $("#page li a").click(function () {
+            $(this).parent().addClass('active').siblings().removeClass('active');
+
+        });
+    </script>
+}
+
+

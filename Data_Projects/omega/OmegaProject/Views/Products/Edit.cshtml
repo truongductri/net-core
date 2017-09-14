@@ -1,0 +1,98 @@
+﻿@model OmegaProject.Models.Product
+
+@{
+    ViewData["Title"] = "Sản phẩm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chỉnh sửa</h2>
+
+<form asp-action="Edit">
+    <div class="form-horizontal">
+        <h4>Sản phẩm</h4>
+        <a asp-action="List">Trở lại danh sách</a>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="ProdId" />
+        <div class="form-group">
+            <label class="col-md-2 control-label">Mã sản phẩm</label>
+            <div class="col-md-4">
+                <input asp-for="ProdNo" class="form-control" />
+                <span asp-validation-for="ProdNo" class="text-danger"></span>
+            </div>
+            <label class="col-md-2 control-label">Tên sản phẩm</label>
+            <div class="col-md-4">
+                <input asp-for="ProdName" class="form-control" />
+                <span asp-validation-for="ProdName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Mô tả</label>
+            <div class="col-md-4">
+                <input asp-for="ProdDescription" class="form-control" />
+                <span asp-validation-for="ProdDescription" class="text-danger"></span>
+            </div>
+            <label asp-for="ProdNotes" class="col-md-2 control-label">Ghi chú</label>
+            <div class="col-md-4">
+                <input asp-for="ProdNotes" class="form-control" />
+                <span asp-validation-for="ProdNotes" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Hình đại diện</label>
+            <div class="col-md-4">
+                <select asp-for="PhotoId" class="form-control" asp-items="ViewBag.PhotoId"></select>
+            </div>
+            <label class="col-md-2 control-label">Không hiển thị</label>
+            <div class="col-md-4">
+                <input asp-for="ProdDisabled" class="checkbox" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Giới thiệu</label>
+            <div class="col-md-10">
+                <textarea id="ProdDescription1" asp-for="ProdDescription1" class="form-control"></textarea>
+                <span asp-validation-for="ProdDescription1" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Tóm tắt chức năng</label>
+            <div class="col-md-10">
+                <textarea id="ProdDescription2" asp-for="ProdDescription2" class="form-control"></textarea>
+                <span asp-validation-for="ProdDescription2" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Điểm mạnh</label>
+            <div class="col-md-10">
+                <textarea id="ProdDescription3" asp-for="ProdDescription3" class="form-control"></textarea>
+                <span asp-validation-for="ProdDescription3" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Đánh giá</label>
+            <div class="col-md-10">
+                <textarea id="ProdDescription4" asp-for="ProdDescription4" class="form-control"></textarea>
+                <span asp-validation-for="ProdDescription4" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Lưu" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+@section Scripts{
+    <script src="~/lib/ckeditor/ckeditor.js"></script>
+    <script src="~/lib/ckeditor/adapters/jquery.js"></script>
+    <script>
+        $("#ProdDescription1").ckeditor();
+        $("#ProdDescription2").ckeditor();
+        $("#ProdDescription3").ckeditor();
+        $("#ProdDescription4").ckeditor();
+    </script>
+
+}
+
+

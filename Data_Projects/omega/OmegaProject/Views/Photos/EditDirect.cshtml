@@ -1,0 +1,91 @@
+@model OmegaProject.Models.Photo
+
+@{
+    ViewData["Title"] = "EditDirect";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>EditDirect</h2>
+
+<form asp-action="EditDirect">
+    <div class="form-horizontal">
+        <h4>Photo</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="PhotoId" />
+        <div class="form-group">
+            <label asp-for="PhotoName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="PhotoName" class="form-control" />
+                <span asp-validation-for="PhotoName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="PhotoThumbNail" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="PhotoThumbNail" class="form-control" />
+                <span asp-validation-for="PhotoThumbNail" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="PhotoLarge01" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="PhotoLarge01" class="form-control" />
+                <span asp-validation-for="PhotoLarge01" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="PhotoLarge02" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="PhotoLarge02" class="form-control" />
+                <span asp-validation-for="PhotoLarge02" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="PhotoLarge03" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="PhotoLarge03" class="form-control" />
+                <span asp-validation-for="PhotoLarge03" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="PhotoLarge04" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="PhotoLarge04" class="form-control" />
+                <span asp-validation-for="PhotoLarge04" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="PhotoLarge05" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="PhotoLarge05" class="form-control" />
+                <span asp-validation-for="PhotoLarge05" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="PhotoNotes" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="PhotoNotes" class="form-control" />
+                <span asp-validation-for="PhotoNotes" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <div class="checkbox">
+                    <input asp-for="PhotoDisabled" />
+                    <label asp-for="PhotoDisabled"></label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

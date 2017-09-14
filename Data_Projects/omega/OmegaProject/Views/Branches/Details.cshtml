@@ -1,0 +1,43 @@
+﻿@model OmegaProject.Models.Branch
+
+@{
+    ViewData["Title"] = "Ngành hàng";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chi tiết</h2>
+
+<div>
+    <h4>Ngành hàng</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Mã ngành hàng
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BraNo)
+        </dd>
+        <dt>
+            Tên ngành hàng
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BraName)
+        </dd>
+        <dt>
+            Ghí chú
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BraNotes)
+        </dd>
+        <dt>
+            Không hiển thị
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BraDisabled)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.BraId">Chỉnh sửa</a> |
+    <a asp-action="Index">Trở lại danh sách</a>
+</div>

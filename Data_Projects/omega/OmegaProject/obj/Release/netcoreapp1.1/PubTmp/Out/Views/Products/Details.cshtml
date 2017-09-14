@@ -1,0 +1,99 @@
+﻿@{
+    ViewData["Title"] = "Sản phẩm";
+    Layout = "~/Views/Shared/_LayoutBootClean.cshtml";
+}
+
+<!-- Sub intro -->
+<section id="subintro">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <h4>@ViewData["Title"]</h4>
+                <h6>Thông tin chi tiết</h6>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End intro -->
+<!-- begin main contain -->
+<section id="maincontain" class="home-main">
+    <div class="container faq-content">
+        <div class="row">
+            <div class="span12">
+                <h4>@ViewBag.Product.ProdName - @ViewBag.Product.ProdNo</h4>
+                <div id="accordion2" class="accordion in collapse">
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle color active" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne-g1" style="font-size:14px">
+                                <i class="icon-minus"></i> Giới thiệu
+                            </a>
+                        </div>
+                        <div id="collapseOne-g1" class="accordion-body in collapse" style="height: auto;">
+                            <div class="accordion-inner">
+                                @Html.Raw(ViewBag.Product.ProdDescription1)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a href="#collapseTwo-g1" data-parent="#accordion2" data-toggle="collapse" class="accordion-toggle color" style="font-size:14px">
+                                <i class="icon-plus"></i> Tóm tắt chức năng
+                            </a>
+                        </div>
+                        <div class="accordion-body collapse" id="collapseTwo-g1" style="height: 0px;">
+                            <div class="accordion-inner">
+                                @Html.Raw(ViewBag.Product.ProdDescription2)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a href="#collapseThree-g1" data-parent="#accordion2" data-toggle="collapse" class="accordion-toggle color" style="font-size:14px">
+                                <i class="icon-plus"></i> Điểm mạnh
+                            </a>
+                        </div>
+                        <div class="accordion-body collapse" id="collapseThree-g1" style="height: 0px;">
+                            <div class="accordion-inner">
+                               @Html.Raw(ViewBag.Product.ProdDescription3)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a href="#collapseFour-g1" data-parent="#accordion2" data-toggle="collapse" class="accordion-toggle color" style="font-size:14px">
+                                <i class="icon-plus"></i> Đánh giá
+                            </a>
+                        </div>
+                        <div class="accordion-body collapse" id="collapseFour-g1" style="height: 0px;">
+                            <div class="accordion-inner">
+                               @Html.Raw(ViewBag.Product.ProdDescription4)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row recent-post">
+            <div class="span12">
+                <h4 class="under-line">Sản phẩm liên quan</h4>
+                <div class="thumbnails">
+                    @foreach (Product item in ViewBag.RecentProduct)
+                    {
+                        <div class="span3">
+                            <div class="thumbnail-style">
+                                <a class="fancyme zoomer" title="" href="@Url.Content("~/img/upload/" +(item.Photo == null ? "" : (item.Photo.PhotoThumbNail == null ? "" : item.Photo.PhotoThumbNail)))">
+                                    <div class="overlay-zoom">
+                                        <img src="@Url.Content("~/img/upload/" +(item.Photo == null ? "" : (item.Photo.PhotoThumbNail == null ? "" : item.Photo.PhotoThumbNail)))" alt="" />
+                                        <div class="zoom-icon"></div>
+                                    </div>
+                                </a>
+                                <h5><a asp-controller="Products" asp-action="Details" asp-route-id="@item.ProdId">@item.ProdNo</a></h5>
+                                <p>@item.ProdDescription.Substring(0, 95) ... <a class="read-more" asp-controller="Products" asp-action="Details" asp-route-id="@item.ProdId">Đọc thêm</a></p>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

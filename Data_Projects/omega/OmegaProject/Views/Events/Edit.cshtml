@@ -1,0 +1,74 @@
+﻿@model OmegaProject.Models.Event
+
+@{
+    ViewData["Title"] = "Sự kiện";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chỉnh sửa</h2>
+
+<form asp-action="Edit">
+    <div class="form-horizontal">
+        <h4>Sự kiện</h4>
+        <a asp-action="Index">Trở lại danh sách</a>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="EventId" />
+        <div class="form-group">
+            <label class="col-md-2 control-label">Tên sự kiện</label>
+            <div class="col-md-10">
+                <input asp-for="EventName" class="form-control" />
+                <span asp-validation-for="EventName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Thông tin 1</label>
+            <div class="col-md-10">
+                <input asp-for="EventInfo1" class="form-control" />
+                <span asp-validation-for="EventInfo1" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Thông tin 2</label>
+            <div class="col-md-10">
+                <input asp-for="EventInfo2" class="form-control" />
+                <span asp-validation-for="EventInfo2" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Thông tin 3</label>
+            <div class="col-md-10">
+                <input asp-for="EventInfo3" class="form-control" />
+                <span asp-validation-for="EventInfo3" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Thông tin 4</label>
+            <div class="col-md-10">
+                <input asp-for="EventInfo4" class="form-control" />
+                <span asp-validation-for="EventInfo4" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Thông tin 5</label>
+            <div class="col-md-10">
+                <input asp-for="EventInfo5" class="form-control" />
+                <span asp-validation-for="EventInfo5" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">Hình ảnh</label>
+            <div class="col-md-10">
+                <select asp-for="PhotoId" class="form-control" asp-items="ViewBag.PhotoId"></select>
+                <span asp-validation-for="PhotoId" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+

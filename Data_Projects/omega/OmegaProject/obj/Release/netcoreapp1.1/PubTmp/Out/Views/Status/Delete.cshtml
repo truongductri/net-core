@@ -1,0 +1,48 @@
+﻿@model OmegaProject.Models.Status
+
+@{
+    ViewData["Title"] = "Xóa";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Xóa</h2>
+
+<h3>Bạn có chắc chắn muốn xóa không ?</h3>
+<div>
+    <h4>Trạng thái</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <input type="hidden" asp-for="StatusId" />
+        <dt>
+            Tên trạng thái
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StatusName)
+        </dd>
+        <dt>
+            Ghi chú
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StatusNotes)
+        </dd>
+        <dt>
+            Không hiển thị
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StatusDisabled)
+        </dd>
+        <dt>
+            Đối tượng
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TableName)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <a asp-action="Index">Trở lại danh sách</a>
+        </div>
+    </form>
+</div>

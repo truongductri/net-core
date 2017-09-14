@@ -1,0 +1,54 @@
+﻿@model OmegaProject.Models.Product
+
+@{
+    ViewData["Title"] = "Sản phẩm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Xóa</h2>
+
+<h3>Bạn có chắc chắn muốn xóa sản phẩm này ?</h3>
+<div>
+    <h4>Chi tiết sản phẩm</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <input type="hidden" asp-for="ProdId" />
+        <dt>
+            Mã sản phẩm
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProdNo)
+        </dd>
+        <dt>
+            Tên sản phẩm
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProdName)
+        </dd>
+        <dt>
+            Mô tả
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProdDescription)
+        </dd>
+        <dt>
+            Ghi chú
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProdNotes)
+        </dd>
+        <dt>
+            Không hiển thị
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProdDisabled)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-default" /> |
+            <a asp-action="List">Trở lại danh sách</a>
+        </div>
+    </form>
+</div>

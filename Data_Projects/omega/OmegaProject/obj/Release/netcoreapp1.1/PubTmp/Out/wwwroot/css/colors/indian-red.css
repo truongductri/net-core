@@ -1,0 +1,110 @@
+::selection{background:#CD5C5C;color:#fff;text-shadow:none;}
+.color{color:#CD5C5C !important;}
+.background-color{background:#CD5C5C !important;color:#fff !important;}
+.primary-color-bg, .strip.primary-color-bg, .testimonial-gallery .primary-color-bg{background-color:#CD5C5C !important;}
+.background-gray:hover{background-color:#CD5C5C;}
+.feature-full-bg{background:#CD5C5C;}
+.feature .btn:hover{background-color:#CD5C5C;}
+.btn-link:hover{color:#B5B9BC;}
+.btn-theme{background:#CD5C5C !important;}
+.btn-theme:hover,
+.btn-theme.active,
+.btn-theme.disabled,
+.btn-theme[disabled]{background:#B5B9BC !important;*background:#B5B9BC !important;}
+.btn-white{background:#fff !important;}
+.btn-white:hover,
+.btn-white.active,
+.btn-white.disabled,
+.btn-white[disabled]{background:#B5B9BC !important;*background:#B5B9BC !important;color:#fff !important;}
+.btn-white{color:#CD5C5C !important;}
+header{background-color:#CD5C5C;}
+.navbar{background-color:#CD5C5C;}
+.navbar-inner{background-color:#CD5C5C;}
+.navbar .nav > .active > a,
+.navbar .nav > .active > a:hover,
+.navbar .nav > .active > a:focus,
+.navbar .nav > li > a:hover,
+.navbar .nav > li:hover a{color:#CD5C5C;}
+.dropdown-submenu:hover > a,
+.dropdown-submenu:focus > a{color:#CD5C5C !important;}
+.dropdown-submenu .dropdown-menu li a{color:#CD5C5C;}
+.dropdown-submenu .dropdown-menu li:hover a,
+.dropdown-submenu .dropdown-menu li a:hover,
+.dropdown-submenu .dropdown-menu li a:focus,
+.dropdown-submenu .dropdown-menu li.active a,
+.dropdown-submenu .dropdown-menu li.active a:hover{background-color:#CD5C5C !important;}
+#searchForm .button-search i{color:#CD5C5C;}
+#sequence-slider .caption h3, #sequence-slider .caption h4{background:#CD5C5C;}
+#sequence-slider:hover .next,#sequence-slider:hover .prev{background-color:#CD5C5C;}
+.main-slider .slides .caption h2{background:#585858;}
+.main-slider .slides .caption h3 ,.main-slider .slides .caption h4{background:#CD5C5C;}
+.iview-caption h3,.iview-caption h4, .iview-caption h5{background:#CD5C5C;}
+#subintro h6{color:#CD5C5C;}
+.services h3{color:#CD5C5C;}
+.thumbnail .overflow-hidden .photo:hover,
+.thumbnail .overflow-hidden .link:hover{color:#CD5C5C;}
+.promo .row{background:#CD5C5C}
+.promo a.purchase{color:#CD5C5C;}
+.feature-item i{color:#CD5C5C;}
+.services-home .title h4{color:#CD5C5C;}
+#service-list div:hover, #service-list div:hover a{background:#CD5C5C;}
+.service-paging .next:hover, .service-paging .prev:hover{background-color:#CD5C5C;}
+.purchase{border-top:solid 1px #CD5C5C;border-bottom:solid 1px #CD5C5C;}
+.about-box h4{background-color:#CD5C5C}
+.thumbnail:hover{border:solid 1px #CD5C5C;}
+.thumbnail-style h5 a{color:#CD5C5C;}
+.thumbnail-style:hover{box-shadow:0 0 8px #CD5C5C;}
+.promo a.purchase{color:#CD5C5C;}
+.portfolio-item .view h4{background:#CD5C5C;}
+.portfolio-item .view a:hover{background-color:#CD5C5C;}
+.more-infomation .testimonial-item:hover{border:solid 1px #CD5C5C;}
+#intro.primary-title h3{color:#CD5C5C;}
+#subintro h5{color:#CD5C5C;}
+.entry-portfolio .nav-order > .active > a,
+.entry-portfolio .nav-order > .active > a:hover,
+.entry-portfolio .nav-order > .active > a:focus,
+.entry-portfolio .nav-order > li > a:hover{background-color:#CD5C5C;}
+.pagination-custom ul li a{background-color:#CD5C5C;}
+.portfolio-area .image-wrapp article small{color:#CD5C5C;}
+#maincontain .main-contain .span-search{background-color:#CD5C5C;}
+#maincontain .main-contain .span-menu .navbar .dropdown-menu > li > a:hover,
+#maincontain .main-contain .span-menu .navbar .dropdown-menu > li > a:focus{background-color:#CD5C5C;}
+#maincontain .main-contain .span-menu .navbar .dropdown-submenu:hover > a,
+#maincontain .main-contain .span-menu .navbar .dropdown-submenu:focus > a{background-color:#CD5C5C;}
+#maincontain .pricing-table .top-title{background-color:#CD5C5C;}
+#maincontain .pricing-table .action button{background-color:#CD5C5C;}
+.pricing-table.span3 .price .odd, .pricing-table.span3 .price .money{color:#CD5C5C;}
+.pricing-table.span3 .price .money{text-shadow:0 0px 2px #CD5C5C;}
+.pricing-table.span3 .purchase{background-color:#CD5C5C;}
+#maincontain .pricing-table .action .btn.btn-large{border:1px solid #CD5C5C;}
+#maincontain .pricing-4cols:hover{border-color:#CD5C5C!important;}
+#maincontain .pricing-5cols:hover{border:1px solid #CD5C5C !important;}
+.accordion-heading a.active, .accordion-heading a:hover{color:#CD5C5C;}
+.nav-tabs{border-color:#CD5C5C;}
+.nav-tabs>.active>a, .nav-tabs>.active>a:hover, .nav-tabs>.active>a:focus{background-color:#CD5C5C;border:1px solid #CD5C5C;}
+.tabs-top ul li.active a, .tabs-top ul li.active a:hover, .tabs-top ul li a:hover{background:#CD5C5C;border-color:#CD5C5C;}
+.entry-header h2 a{color:#CD5C5C;}
+.widget .title{color:#CD5C5C;}
+.categories ul li a:hover{color:#CD5C5C;}
+.blog .list-item h1{color:#CD5C5C;}
+.blog .list-item .btn{background-color:#CD5C5C;}
+.blog .categories h5, .blog .last-post h5{color:#CD5C5C;}
+.blog .sideBar-tags .list-keywords li a{background-color:#CD5C5C;}
+.attention{border-left:10px solid #CD5C5C;}
+.blog .prev-next .btn-a, .blog .comment-contain .btn-a{background-color:#CD5C5C;}
+.entry-heading h2 a{color:#CD5C5C;}
+.blog .entry-tags h6{color:#CD5C5C;}
+.blog .entry-tags span{color:#CD5C5C;}
+.blog-summary-grid li .entry-summary a:hover{color:#CD5C5C;}
+.last-post ul li a:hover p{color:#CD5C5C;}
+.blog .related-post-area h3{color:#CD5C5C;}
+.related-post-area a:hover{color:#CD5C5C;}
+.post-pagination.link-area a:hover{color:#CD5C5C;}
+.tags-color ul li a{background:#CD5C5C;}
+.tags ul li a:hover{color:#CD5C5C;}
+.sort li a.active:hover, .sort li a:hover, .sort li a.active{background-color:#CD5C5C;}
+.top-day-comment li.li-post span{color:#CD5C5C;}
+.introduce .span7 p span{color:#CD5C5C;}
+.da-thumbs li .img-4col article a:hover{background-color:#CD5C5C;}
+.news-box .news-item a:hover p{color:#CD5C5C;}
+footer{background-color:#CD5C5C;}

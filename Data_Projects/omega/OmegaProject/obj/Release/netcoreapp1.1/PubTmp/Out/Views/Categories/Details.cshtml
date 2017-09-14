@@ -1,0 +1,43 @@
+﻿@model OmegaProject.Models.Category
+
+@{
+    ViewData["Title"] = "Loại bài đăng";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chi tiết</h2>
+
+<div>
+    <h4>Loại bài đăng</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên loại
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CateName)
+        </dd>
+        <dt>
+            Ghi chú
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CateNotes)
+        </dd>
+        <dt>
+            Không hiển thị
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CateDisabled)
+        </dd>
+        <dt>
+            Trạng thái
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Status.StatusId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.CateId">Chỉnh sửa</a> |
+    <a asp-action="Index">Trở lại danh sách</a>
+</div>

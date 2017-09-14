@@ -1,0 +1,90 @@
+@model OmegaProject.Models.Post
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Post</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <input type="hidden" asp-for="PostId" />
+        <dt>
+            @Html.DisplayNameFor(model => model.PostTitle)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PostTitle)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PostDescription)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PostDescription)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PostLabel)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PostLabel)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PostDisabled)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PostDisabled)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PostDateCreate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PostDateCreate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PostLastUpdate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PostLastUpdate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Category.CateId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Photo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Photo.PhotoId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PostUserCreateNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PostUserCreateNavigation.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PostUserUpdateNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PostUserUpdateNavigation.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Status.StatusId)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </form>
+</div>

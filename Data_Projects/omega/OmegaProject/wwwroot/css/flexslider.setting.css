@@ -1,0 +1,39 @@
+.flexslider .slides > li{margin-right:1px;}
+.flexslider-section{height:400px;background:#F3F3F3 url(../img/menu-bg.png) no-repeat center top;}
+.main-slider{height:400px;}
+.main-slider .slides .slide-img{margin-top:100px;margin-right:0;margin-left:0;}
+.main-slider .slides .caption{margin-top:110px;margin-right:0;margin-left:0;}
+.main-slider .slides .caption.right{text-align:right;}
+.main-slider .slides .caption h2{padding:10px;display:inline-block;color:#fff;font-size:16px;background:#1C1C1C;text-shadow:2px -2px 2px rgba(0,0,0,.2);line-height:24px;clear:both;}
+.main-slider .slides .caption h3{color:#fff;font-size:100%;line-height:1.4;padding:5px 10px;display:inline-block;clear:both;background:#00AEC8;}
+.main-slider .slides .caption h4{color:#fff;font-size:100%;line-height:1.4;padding:5px 10px;display:inline-block;clear:both;background:#00AEC8;}
+@media (max-width:1024px){.flex-direction-nav .flex-next{right:0!important;}
+}
+@media (max-width:979px){.flex-direction-nav .flex-next{right:0!important;}
+}
+@media (max-width:853px){.flexslider-section{height:350px;}
+.flex-direction-nav .flex-next,.flex-direction-nav .flex-prev{opacity:0;}
+.main-slider{height:350px;}
+}
+@media (max-width:800px){.flexslider-section{height:300px;}
+.main-slider{height:300px;}
+}
+@media (max-width:768px){.flexslider-section{height:300px;}
+.main-slider{height:300px;}
+.main-slider .slides .slide-img{margin-top:50px;width:49%;float:left;}
+.main-slider .slides .caption{margin-top:50px;width:49%;float:left;}
+.main-slider .slides .caption h2{font-size:12px;}
+.main-slider .slides .caption h3,.main-slider .slides .caption h4{font-size:10px;}
+.flexslider .slides img{max-height:200px;width:auto;}
+}
+@media (max-width:600px){.flexslider-section{height:290px;}
+.main-slider{height:290px;}
+}
+@media (max-width:533px){.flexslider-section{height:275px;}
+.main-slider{height:275px;}
+}
+@media (max-width:480px){.main-slider .slides .span6{width:100%;margin-top:10px;float:none;text-align:center;}
+.flexslider .slides img{max-height:100px;display:inline-block;}
+.main-slider .slides .caption.right{text-align:center;}
+.main-slider .slides .caption h2, .main-slider .slides .caption h3, .main-slider .slides .caption h4{margin-bottom:0;margin-top:5px;}
+}

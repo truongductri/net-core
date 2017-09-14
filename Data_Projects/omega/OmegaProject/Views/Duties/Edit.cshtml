@@ -1,0 +1,54 @@
+﻿@model OmegaProject.Models.Duty
+
+@{
+    ViewData["Title"] = "Chức vụ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chỉnh sửa</h2>
+
+<form asp-action="Edit">
+    <div class="form-horizontal">
+        <h4>Chức vụ</h4>
+        <a asp-action="Index">Trở lại danh sách</a>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="DutyId" />
+        <div class="form-group">
+            <label class="col-md-2 control-label">Mã chức vụ</label>
+            <div class="col-md-10">
+                <input asp-for="DutyNo" class="form-control" />
+                <span asp-validation-for="DutyNo" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Tên chức vụ</label>
+            <div class="col-md-10">
+                <input asp-for="DutyName" class="form-control" />
+                <span asp-validation-for="DutyName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Ghi chú</label>
+            <div class="col-md-10">
+                <input asp-for="DutyNotes" class="form-control" />
+                <span asp-validation-for="DutyNotes" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <div class="checkbox">
+                    <input asp-for="DutyDisabled" />
+                    <label>Không hiển thị</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+

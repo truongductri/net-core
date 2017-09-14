@@ -1,0 +1,88 @@
+﻿// Configure bundling and minification for the project.
+// More info at https://go.microsoft.com/fwlink/?LinkId=808241
+[
+  {
+    "outputFileName": "wwwroot/css/site.min.css",
+    "inputFiles": [
+      "wwwroot/css/site.css",
+      "wwwroot/datatables/css/dataTables.bootstrap.min.css",
+      "wwwroot/font-awesome/4.2.0/css/font-awesome.min.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/sequence-slider.min.css",
+    "inputFiles": [
+      "wwwroot/css/sequence-slider.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/sequence-slider.responsive.min.css",
+    "inputFiles": [
+      "wwwroot/css/sequence-slider.responsive.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/flexslider.min.css",
+    "inputFiles": [
+      "wwwroot/css/flexslider.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/flexslider.setting.min.css",
+    "inputFiles": [
+      "wwwroot/css/flexslider.setting.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/style.min.css",
+    "inputFiles": [
+      "wwwroot/css/style.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/style.responsive.min.css",
+    "inputFiles": [
+      "wwwroot/css/style.responsive.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/colors.min.css",
+    "inputFiles": [
+      "wwwroot/css/colors/default.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/site.min.js",
+    "inputFiles": [
+      "wwwroot/js/site.js",
+      "wwwroot/js/jquery.dataTables.min.js",
+      "wwwroot/js/jquery.dataTables.bootstrap.min.js",
+      "wwwroot/js/dataTables.tableTools.min.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/function.min.js",
+    "inputFiles": [
+      "wwwroot/js/modernizr.custom.17475.js",
+      "wwwroot/js/sequence.jquery-min.js",
+      "wwwroot/js/raphael-min.js",
+      "wwwroot/js/jquery.easing.1.3.js",
+      "wwwroot/js/jquery.flexslider.js",
+      "wwwroot/js/iview.js",
+      "wwwroot/js/jquery.quicksand.js",
+      "wwwroot/js/jquery.carouFredSel-6.2.1-packed.js",
+      "wwwroot/js/jquery.placeholder.min.js",
+      "wwwroot/js/function.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  }
+]

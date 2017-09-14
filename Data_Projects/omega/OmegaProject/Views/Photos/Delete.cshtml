@@ -1,0 +1,78 @@
+@model OmegaProject.Models.Photo
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Photo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <input type="hidden" asp-for="PhotoId" />
+        <dt>
+            @Html.DisplayNameFor(model => model.PhotoName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PhotoName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PhotoThumbNail)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PhotoThumbNail)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PhotoLarge01)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PhotoLarge01)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PhotoLarge02)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PhotoLarge02)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PhotoLarge03)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PhotoLarge03)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PhotoLarge04)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PhotoLarge04)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PhotoLarge05)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PhotoLarge05)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PhotoNotes)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PhotoNotes)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PhotoDisabled)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PhotoDisabled)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </form>
+</div>

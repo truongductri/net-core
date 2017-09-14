@@ -1,0 +1,73 @@
+﻿@model OmegaProject.Models.Photo
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Photo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên hình
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PhotoName)
+        </dd>
+        <dt>
+            Hình nhỏ
+        </dt>
+        <dd>
+            <img alt="" src="@Url.Content("~/img/upload/" +(Model.PhotoThumbNail == null ? "" : (Model.PhotoThumbNail == null ? "" : Model.PhotoThumbNail)))" />
+        </dd>
+        <dt>
+            Hình lớn 1
+        </dt>
+        <dd>
+            <img alt="" src="@Url.Content("~/img/upload/" +(Model.PhotoLarge01 == null ? "" : (Model.PhotoLarge01 == null ? "" : Model.PhotoLarge01)))" />
+        </dd>
+        <dt>
+            Hình lớn 2
+        </dt>
+        <dd>
+            <img alt="" src="@Url.Content("~/img/upload/" +(Model.PhotoLarge02 == null ? "" : (Model.PhotoLarge02 == null ? "" : Model.PhotoLarge02)))" />
+        </dd>
+        <dt>
+            Hình lớn 3
+        </dt>
+        <dd>
+            <img alt="" src="@Url.Content("~/img/upload/" +(Model.PhotoLarge03 == null ? "" : (Model.PhotoLarge03 == null ? "" : Model.PhotoLarge03)))" />
+        </dd>
+        <dt>
+            Hình lớn 4
+        </dt>
+        <dd>
+            <img alt="" src="@Url.Content("~/img/upload/" +(Model.PhotoLarge04 == null ? "" : (Model.PhotoLarge04 == null ? "" : Model.PhotoLarge04)))" />
+        </dd>
+        <dt>
+            Hình lớn 5
+        </dt>
+        <dd>
+            <img alt="" src="@Url.Content("~/img/upload/" +(Model.PhotoLarge05 == null ? "" : (Model.PhotoLarge05 == null ? "" : Model.PhotoLarge05)))" />
+        </dd>
+        <dt>
+            Ghi chú
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PhotoNotes)
+        </dd>
+        <dt>
+            Không hiển thị
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PhotoDisabled)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.PhotoId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

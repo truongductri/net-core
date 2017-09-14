@@ -1,0 +1,43 @@
+﻿@model OmegaProject.Models.Status
+
+@{
+    ViewData["Title"] = "Trạng thái";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chi tiết</h2>
+
+<div>
+    <h4>Trạng thái</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên trạng thái
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StatusName)
+        </dd>
+        <dt>
+            Ghi chú
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StatusNotes)
+        </dd>
+        <dt>
+            Không hiển thị
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StatusDisabled)
+        </dd>
+        <dt>
+            Đối tượng
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TableName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.StatusId">Chỉnh sửa</a> |
+    <a asp-action="Index">Trở lại danh sách</a>
+</div>

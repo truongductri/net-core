@@ -1,0 +1,213 @@
+﻿@model OmegaProject.Models.Photo
+
+@{
+    ViewData["Title"] = "Hình ảnh";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chỉnh sửa</h2>
+
+
+<form asp-action="Edit" method="post" enctype="multipart/form-data">
+    <div class="form-horizontal">
+        <h4>Hình ảnh</h4>
+        <a asp-action="Index">Trở lại danh sách</a>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="PhotoId" />
+        <div class="form-group">
+            <label class="col-md-2 control-label">Tên hình</label>
+            <div class="col-md-10">
+                <input asp-for="PhotoName" class="form-control" />
+                <span asp-validation-for="PhotoName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Hình nhỏ</label>
+            <div class="col-md-10">
+                <img id="fileThumbNail" src="" style="border-width: 0px; visibility: hidden;" />                
+                <input class="form-control" name="fileThumbNail" type="file" accept="image/*" onchange="showThumbNail(this);" />
+                @if (Model.PhotoThumbNail != null)
+                {
+                    <p>Hình cũ : @Model.PhotoThumbNail</p>
+                }
+                <input asp-for="PhotoThumbNail" class="form-control" type="hidden" />
+                <span asp-validation-for="PhotoThumbNail" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Hình lớn 1</label>
+            <div class="col-md-10">
+                <img id="fileLarge01" src="" style="border-width: 0px; visibility: hidden;" />
+                <input class="form-control" name="fileLarge01" type="file" accept="image/*" onchange="showLarge01(this);" />
+                @if (Model.PhotoLarge01 != null)
+                {
+                    <p>Hình cũ : @Model.PhotoLarge01</p>
+                }
+                <input asp-for="PhotoLarge01" class="form-control" type="hidden" />
+                <span asp-validation-for="PhotoLarge01" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Hình lớn 2</label>
+            <div class="col-md-10">
+                <img id="fileLarge02" src="" style="border-width: 0px; visibility: hidden;" />
+                <input class="form-control" name="fileLarge02" type="file" accept="image/*" onchange="showLarge02(this);" />
+                @if (Model.PhotoLarge02 != null)
+                {
+                    <p>Hình cũ : @Model.PhotoLarge02</p>
+                }
+                <input asp-for="PhotoLarge02" class="form-control" type="hidden" />
+                <span asp-validation-for="PhotoLarge02" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Hình lớn 3</label>
+            <div class="col-md-10">
+                <img id="fileLarge03" src="" style="border-width: 0px; visibility: hidden;" />
+                <input class="form-control" name="fileLarge03" type="file" accept="image/*" onchange="showLarge03(this);" />
+                @if (Model.PhotoLarge03 != null)
+                {
+                    <p>Hình cũ : @Model.PhotoLarge03</p>
+                }
+                <input asp-for="PhotoLarge03" class="form-control" type="hidden" />
+                <span asp-validation-for="PhotoLarge03" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Hình lớn 4</label>
+            <div class="col-md-10">
+                <img id="fileLarge04" src="" style="border-width: 0px; visibility: hidden;" />
+                <input class="form-control" name="fileLarge04" type="file" accept="image/*" onchange="showLarge04(this);" />
+                @if (Model.PhotoLarge04 != null)
+                {
+                    <p>Hình cũ : @Model.PhotoLarge04</p>
+                }
+                <input asp-for="PhotoLarge04" class="form-control" type="hidden" />
+                <span asp-validation-for="PhotoLarge04" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Hình lớn 5</label>
+            <div class="col-md-10">
+                <img id="fileLarge05" src="" style="border-width: 0px; visibility: hidden;" />
+                <input class="form-control" name="fileLarge05" type="file" accept="image/*" onchange="showLarge05(this);" />
+                @if (Model.PhotoLarge05 != null)
+                {
+                    <p>Hình cũ : @Model.PhotoLarge05</p>
+                }
+                <input asp-for="PhotoLarge05" class="form-control" type="hidden" />
+                <span asp-validation-for="PhotoLarge05" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Ghi chú</label>
+            <div class="col-md-10">
+                <input rows="3" asp-for="PhotoNotes" class="form-control" />
+                <span asp-validation-for="PhotoNotes" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <div class="checkbox">
+                    <input asp-for="PhotoDisabled" />
+                    <label>Không hiển thị</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts{
+    <script type="text/javascript">
+        function showThumbNail(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#fileThumbNail').css('visibility', 'visible');
+                    $('#fileThumbNail').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+            else {
+                $('#fileThumbNail').css('visible', 'visibility');
+                $('#fileThumbNail').attr('src', '');
+            }
+        }
+        function showLarge01(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#fileLarge01').css('visibility', 'visible');
+                    $('#fileLarge01').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+            else {
+                $('#fileLarge01').css('visible', 'visibility');
+                $('#fileLarge01').attr('src', '');
+            }
+        }
+        function showLarge02(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#fileLarge02').css('visibility', 'visible');
+                    $('#fileLarge02').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+            else {
+                $('#fileLarge02').css('visible', 'visibility');
+                $('#fileLarge02').attr('src', '');
+            }
+        }
+        function showLarge03(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#fileLarge03').css('visibility', 'visible');
+                    $('#fileLarge03').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+            else {
+                $('#fileLarge03').css('visible', 'visibility');
+                $('#fileLarge03').attr('src', '');
+            }
+        }
+        function showLarge04(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#fileLarge04').css('visibility', 'visible');
+                    $('#fileLarge04').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+            else {
+                $('#fileLarge04').css('visible', 'visibility');
+                $('#fileLarge04').attr('src', '');
+            }
+        }
+        function showLarge05(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#fileLarge05').css('visibility', 'visible');
+                    $('#fileLarge05').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+            else {
+                $('#fileLarge05').css('visible', 'visibility');
+                $('#fileLarge05').attr('src', '');
+            }
+        }
+    </script>
+}
